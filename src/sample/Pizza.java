@@ -1,14 +1,10 @@
 
-
+ // Written by Tadevos
 public class Pizza {
 
         private String name;
         private double price;
         private int ordernumber;
-        //default constructor
-        public Pizza() {
-        }
-
 
         public Pizza(String name, double price, int ordernumber) {
             this.name = name;
@@ -36,7 +32,11 @@ public class Pizza {
             return name;
         }
 
+<<<<<<< HEAD
         public void setNamn(String name) {
+=======
+        public void setName(String name) {
+>>>>>>> Johan
             this.name = name;
         }
     }
