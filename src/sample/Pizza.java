@@ -1,4 +1,4 @@
-
+package sample;
  // Written by Tadevos
 public class Pizza {
 
