@@ -5,9 +5,6 @@ public class Pizza {
         private String name;
         private double price;
         private int ordernumber;
-        //default constructor
-        public Pizza() {
-        }
 
         public Pizza(String name, double price, int ordernumber) {
             this.name = name;
