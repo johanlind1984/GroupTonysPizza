@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tonymozzarellafx.Controller_Menu">
+   <children>
+      <TabPane layoutY="-2.0" prefHeight="750.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: limegreen;" text="Customer Terminal">
+            <content>
+              <AnchorPane fx:id="idCustTerminal" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="83.0" layoutY="66.0" prefHeight="30.0" prefWidth="146.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Pizza meny">
+                           <font>
+                              <Font name="Gabriola" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="382.0" layoutY="66.0" prefHeight="22.0" prefWidth="125.0" style="-fx-font-family: Gabriola; -fx-font-size: 24;" text="Tillägg">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="idPizzaList" layoutX="7.0" layoutY="95.0" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="idPizzaList1" layoutX="310.0" layoutY="95.0" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
+                        <Label alignment="CENTER" layoutX="160.0" layoutY="371.0" prefHeight="23.0" prefWidth="165.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Varukorg" />
+                        <ListView fx:id="idShoppingCart" layoutX="148.0" layoutY="401.0" prefHeight="243.0" prefWidth="438.0" style="-fx-background-color: white;" />
+                        <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="401.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="changeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="504.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ändra">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="removeItemID" alignment="BOTTOM_CENTER" layoutX="43.0" layoutY="606.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <HBox alignment="CENTER" layoutX="-1.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+                        <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                        <HBox alignment="CENTER" layoutX="-1.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+                        <HBox alignment="CENTER" layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="label" alignment="CENTER" prefHeight="45.0" prefWidth="210.0" style="-fx-font-size: 35; -fx-font-family: Gabriola;" text="Tony Mozzarella" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Gabriola" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: white;" text="Chef Terminal">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <ListView layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+                        <HBox alignment="CENTER" layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="label1" alignment="CENTER" prefHeight="45.0" prefWidth="210.0" style="-fx-font-size: 35; -fx-font-family: Gabriola;" text="Tony Mozzarella" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Gabriola" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                        <HBox alignment="CENTER" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+                        <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                        <Button fx:id="orderInOvenID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order i ugnen">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="takeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta order">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderCompleteID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="231.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order klar">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab style="-fx-background-color: red;" text="Status Terminal">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+                        <HBox alignment="CENTER" layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="label11" alignment="CENTER" prefHeight="45.0" prefWidth="210.0" style="-fx-font-size: 35; -fx-font-family: Gabriola;" text="Tony Mozzarella" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Gabriola" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                        <HBox alignment="CENTER" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+                        <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                        <ListView layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
+                        <Button fx:id="sendOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Lämna ut order">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="removeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort order">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
