@@ -1,5 +1,3 @@
-package sample;
-
 import java.util.ArrayList;
 
 public class ChefTerminal {
@@ -37,7 +35,7 @@ public class ChefTerminal {
     public void setOrderStatus(int orderStatus, Pizza pizzaToChangeStatus) {
         for (Pizza pizza : queueOfPizzasToBake) {
             if(pizza.equals(pizzaToChangeStatus)) {
-                pizza.setOrderStatus(orderStatus);
+                pizza.setOrdernumber(orderStatus);
             }
         }
     }
