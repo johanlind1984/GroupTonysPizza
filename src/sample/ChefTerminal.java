@@ -18,7 +18,7 @@ public class ChefTerminal {
         this.queueOfPizzasToBake = new ArrayList<>();
     }
 
-    public void addPizzaToBakeQueue(Pizza pizzaToBake) {
+    public void addPizzaToQueue(Pizza pizzaToBake) {
         queueOfPizzasToBake.add(pizzaToBake);
     }
 
