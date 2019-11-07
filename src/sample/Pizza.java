@@ -32,11 +32,9 @@ public class Pizza {
             return name;
         }
 
-<<<<<<< HEAD
         public void setNamn(String name) {
-=======
+
         public void setName(String name) {
->>>>>>> Johan
             this.name = name;
         }
     }
