@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package sample;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,12 +23,37 @@ import javafx.stage.Stage;
 public class Controller_Menu {
     
     @FXML
-    Button addPizzaID;
+    Button payOrderID;
+    
+    @FXML
+    Button changeOrderID;
+    
+    @FXML
+    Button removeItemID;
+    
+    @FXML
+    Button sendOrderID;
+    
+    @FXML
+    Button removeOrderID;
+    
+    @FXML
+    Button takeOrderID;
+    
+    @FXML
+    Button orderInOvenID;
+    
+    @FXML
+    Button orderCompleteID;
+    
+    
+    
+    //REDUNDANT METHOD BELOW
     public void handButtonActionPizza(ActionEvent e){
     
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("PizzaMenu.fxml"));
-            //root.getChildren().add(btn);
+            Parent root = FXMLLoader.load(getClass().getResource("ViewTerminals.fxml"));
+
             Stage primaryStage = new Stage();
             Scene scene = new Scene(root, 350, 350);
             

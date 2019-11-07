@@ -25,13 +25,13 @@ public class TonyMozzarellaFX extends Application {
     public void start(Stage stage) throws Exception {
         
         try {
-        Parent root = FXMLLoader.load(getClass().getResource("design.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ViewTerminals.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setTitle("Tony Mozzarella's Pizzas");
-        stage.getIcons().add(new Image("file:C:\\Users\\Stefan\\Documents\\NetBeansProjects\\TonyMozzarellaFX\\src\\TonyMozzarellaImages\\flag.png"));
+        stage.setTitle("Tony Mozzarella's Pizza");
+        stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
         stage.show();
     }  catch (IOException ex){
         Logger.getLogger(TonyMozzarellaFX.class.getName()).log(Level.SEVERE, null, ex);
