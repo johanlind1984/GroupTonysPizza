@@ -29,7 +29,7 @@ public class Pizza {
             extraIngredients.remove(ingredientToRemove);
             return true;
         } else if (includedIngredients.contains(ingredientToRemove)) {
-            extraIngredients.remove(ingredientToRemove);
+            includedIngredients.remove(ingredientToRemove);
             return true;
         }
 
