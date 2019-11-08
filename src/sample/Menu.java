@@ -6,19 +6,14 @@ public class Menu {
     private ArrayList<Ingredient>allIngredientMenu=new ArrayList<>();
     private ArrayList<Extras>allExtrasMenu= new ArrayList<>();
 
-import java.util.ArrayList;
-
-public class Menu {
-
-    private ArrayList<Pizza> allPizzaMenu;
-    private ArrayList<Ingredient> allIngredientMenu;
-    private ArrayList<Extras> allExtrasMenu;
-
-
     public Menu() {
         allPizzaMenu = new ArrayList<Pizza>();
         allIngredientMenu = new ArrayList<Ingredient>();
         allExtrasMenu = new ArrayList<Extras>();
+        createListOfIngredientsAndPizzas();
+        createListOfExtras();
+    }
+    public Menu() {
         createListOfIngredientsAndPizzas();
         createListOfExtras();
     }
@@ -147,12 +142,6 @@ public class Menu {
 
     public ArrayList<Extras> getAllExtrasMenu() {
         return allExtrasMenu;
-    }
-
-
-    public Menu() {
-        createListOfIngredientsAndPizzas();
-        createListOfExtras();
     }
 }
 
