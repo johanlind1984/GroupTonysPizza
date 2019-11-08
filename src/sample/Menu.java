@@ -1,14 +1,11 @@
 package sample;
-
-<<<<<<< Updated upstream
-
 import java.util.ArrayList;
 
 public class Menu {
     private ArrayList<Pizza>allPizzaMenu=new ArrayList<>();
     private ArrayList<Ingredient>allIngredientMenu=new ArrayList<>();
     private ArrayList<Extras>allExtrasMenu= new ArrayList<>();
-=======
+
 import java.util.ArrayList;
 
 public class Menu {
