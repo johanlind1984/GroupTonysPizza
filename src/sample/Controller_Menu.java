@@ -46,10 +46,20 @@ public class Controller_Menu {
     @FXML
     Button orderCompleteID;
     
+<<<<<<< HEAD
+    
+    
+    //REDUNDANT METHOD BELOW
+=======
+>>>>>>> Johan
     public void handButtonActionPizza(ActionEvent e){
     
         try {
             Parent root = FXMLLoader.load(getClass().getResource("ViewTerminals.fxml"));
+<<<<<<< HEAD
+
+=======
+>>>>>>> Johan
             Stage primaryStage = new Stage();
             Scene scene = new Scene(root, 350, 350);
             
