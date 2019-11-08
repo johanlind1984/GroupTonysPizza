@@ -1,5 +1,6 @@
 package sample;
 
+<<<<<<< Updated upstream
 
 import java.util.ArrayList;
 
@@ -7,6 +8,24 @@ public class Menu {
     private ArrayList<Pizza>allPizzaMenu=new ArrayList<>();
     private ArrayList<Ingredient>allIngredientMenu=new ArrayList<>();
     private ArrayList<Extras>allExtrasMenu= new ArrayList<>();
+=======
+import java.util.ArrayList;
+
+public class Menu {
+
+    private ArrayList<Pizza> allPizzaMenu;
+    private ArrayList<Ingredient> allIngredientMenu;
+    private ArrayList<Extras> allExtrasMenu;
+
+
+    public Menu() {
+        allPizzaMenu = new ArrayList<Pizza>();
+        allIngredientMenu = new ArrayList<Ingredient>();
+        allExtrasMenu = new ArrayList<Extras>();
+        createListOfIngredientsAndPizzas();
+        createListOfExtras();
+    }
+>>>>>>> Stashed changes
 
     public void createListOfIngredientsAndPizzas(){
         Ingredient tomato=new Ingredient ("Tomat", 5.00);
@@ -132,9 +151,14 @@ public class Menu {
     public ArrayList<Extras> getAllExtrasMenu() {
         return allExtrasMenu;
     }
+<<<<<<< Updated upstream
 
     public Menu() {
         createListOfIngredientsAndPizzas();
         createListOfExtras();
     }
 }
+=======
+}
+
+>>>>>>> Stashed changes

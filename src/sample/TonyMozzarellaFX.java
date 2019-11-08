@@ -31,13 +31,13 @@ public class TonyMozzarellaFX extends Application {
         
         stage.setScene(scene);
         stage.setTitle("Tony Mozzarella's Pizza");
-        stage.getIcons().add(new Image("file:C:\\Users\\Stefan\\Documents\\NetBeansProjects\\TonyMozzarellaFX\\src\\TonyMozzarellaImages\\flag.png"));
+        stage.getIcons().add(new Image("file:TonyMozzarellaImages\\flag.png"));
         stage.show();
     }  catch (IOException ex){
         Logger.getLogger(TonyMozzarellaFX.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-       
+
 
     public static void main(String[] args) {
         launch(args);
