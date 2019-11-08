@@ -69,7 +69,7 @@ public class CustomerTerminal {
         order.setOrderNumber(getOrderCount());
 
         if (order.getTotalPrice() != 0) {
-            if (HardwareCreditCardReader.requestPayment(2323223, order.getTotalPrice())) {
+            if (CardReader.processPayment()) {
                 return true;
             }
         }

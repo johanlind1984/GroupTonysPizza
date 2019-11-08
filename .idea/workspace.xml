@@ -6,11 +6,13 @@
       <change afterPath="$PROJECT_DIR$/src/sample/CardReader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/sample/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/sample/ChefTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChefTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Pizza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/StatusTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StatusTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/TonyMozzarellaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/TonyMozzarellaFX.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
     </list>
 =======
@@ -42,10 +44,10 @@
   <component name="ProjectId" id="1TIiALMG4zal7ZDC1HdQGPohv4i" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
