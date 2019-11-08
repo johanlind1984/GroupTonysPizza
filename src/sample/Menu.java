@@ -13,10 +13,6 @@ public class Menu {
         createListOfIngredientsAndPizzas();
         createListOfExtras();
     }
-    public Menu() {
-        createListOfIngredientsAndPizzas();
-        createListOfExtras();
-    }
 
 
     public void createListOfIngredientsAndPizzas(){
