@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42c2ddfc-c53a-4fe7-bdb9-79b0d9eec91b" name="Default Changelist" comment="">
-<<<<<<< Updated upstream
-=======
       <change afterPath="$PROJECT_DIR$/src/sample/CardReader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/sample/Menu.java" afterDir="false" />
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ChefTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChefTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Pizza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/StatusTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StatusTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/TonyMozzarellaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/TonyMozzarellaFX.java" afterDir="false" />
-<<<<<<< Updated upstream
-=======
       <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
