@@ -22,7 +22,7 @@ public class Menu {
         createListOfIngredientsAndPizzas();
         createListOfExtras();
     }
->>>>>>> Stashed changes
+
 
     public void createListOfIngredientsAndPizzas(){
         Ingredient tomato=new Ingredient ("Tomat", 5.00);
@@ -148,14 +148,12 @@ public class Menu {
     public ArrayList<Extras> getAllExtrasMenu() {
         return allExtrasMenu;
     }
-<<<<<<< Updated upstream
+
 
     public Menu() {
         createListOfIngredientsAndPizzas();
         createListOfExtras();
     }
 }
-=======
-}
 
->>>>>>> Stashed changes
+}
