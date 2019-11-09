@@ -26,5 +26,8 @@ public class Extras {
         this.name = name;
     }
 
-
+    @Override
+    public String toString() {
+        return name + " " + price + "kr";
+    }
 }

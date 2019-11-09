@@ -40,7 +40,7 @@ public class CustomerTerminal {
     }
 
     public void addPizzaToShoppingCart(Pizza pizzaToAddToCart) {
-        pizzasInShoppingCart.add(new Pizza(pizzaToAddToCart.getName(), pizzaToAddToCart.getPrice(), pizzaToAddToCart.getIncludedIngredients()));
+        pizzasInShoppingCart.add(new Pizza(pizzaToAddToCart.getName(), pizzaToAddToCart.getPrice()));
     }
 
     public boolean removePizzaFromShoppingCart(Pizza pizzaToRemoveFromCart) {

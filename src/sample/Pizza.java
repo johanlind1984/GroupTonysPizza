@@ -13,13 +13,13 @@ public class Pizza {
     private ArrayList<Ingredient> includedIngredients;
     private ArrayList<Ingredient> extraIngredients;
 
-    public Pizza(String name, double price, ArrayList<Ingredient> includedIngredients) {
+    public Pizza(String name, double price) {
         this.name = name;
         this.price = price;
         this.ordernumber = 0;
         this.isAmerican = false;
         this.orderStatus = 0;
-        this.includedIngredients = includedIngredients;
+        this.includedIngredients = new ArrayList<>();
         this.extraIngredients = new ArrayList<>();
     }
 

@@ -67,6 +67,8 @@ public class Controller_Menu {
             pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
             ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
             extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
+            pizzaListID.setItems(pizzaObservableList);
+            extraListID.setItems(extrasObservableList);
 
             
             //REDUNDANT METHOD BELOW
