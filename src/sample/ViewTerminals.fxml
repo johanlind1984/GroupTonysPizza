@@ -27,10 +27,10 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="idPizzaList" layoutX="7.0" layoutY="95.0" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
-                        <ListView fx:id="idPizzaList1" layoutX="310.0" layoutY="95.0" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="pizzaListID" layoutX="7.0" layoutY="95.0" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="extraListID" layoutX="310.0" layoutY="95.0" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <Label alignment="CENTER" layoutX="160.0" layoutY="371.0" prefHeight="23.0" prefWidth="165.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Varukorg" />
-                        <ListView fx:id="idShoppingCart" layoutX="148.0" layoutY="401.0" prefHeight="243.0" prefWidth="438.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" prefHeight="243.0" prefWidth="438.0" style="-fx-background-color: white;" />
                         <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="401.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
                            <font>
                               <Font name="System Bold" size="18.0" />
@@ -68,7 +68,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
                      <children>
-                        <ListView layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="chefOrderListID" layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
                         <HBox alignment="CENTER" layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
                            <children>
@@ -119,7 +119,7 @@
                         <HBox alignment="CENTER" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
                         <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-                        <ListView layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="statusOrderListID" layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
                         <Button fx:id="sendOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Lämna ut order">
                            <font>
                               <Font size="18.0" />
