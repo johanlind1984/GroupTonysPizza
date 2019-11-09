@@ -8,15 +8,20 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
+import javafx.stage.WindowEvent;
 
 /**
  *
  * @author Stefan
  */
+
+
 public class Controller_Menu {
 
     @FXML
@@ -64,16 +69,17 @@ public class Controller_Menu {
     
 
     @FXML
-    public void handlePickPizza(ActionEvent pickPizza) {
-    CheckBox checkBox = new CheckBox();
+    public void handlePickPizza(ActionEvent pickPizza, WindowEvent cTextMenu) {
+        CheckBox checkBox = new CheckBox();
         if (checkBox.isSelected()) {
             isAmerican(true);
-        } else {
+        } else if (!checkBox.isSelected()) {
             isAmerican(false);
-        }
+        } else
+            isAmerican(false);
     }
     
-
+    
     @FXML
     public void handlePickExtra(ActionEvent pickExtra) {
 
