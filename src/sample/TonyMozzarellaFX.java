@@ -36,8 +36,6 @@ public class TonyMozzarellaFX extends Application {
 
         stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
 
-        stage.getIcons().add(new Image("file:C:\\Users\\Stefan\\Documents\\NetBeansProjects\\TonyMozzarellaFX\\src\\TonyMozzarellaImages\\flag.png"));
-
         stage.show();
     }  catch (IOException ex){
         Logger.getLogger(TonyMozzarellaFX.class.getName()).log(Level.SEVERE, null, ex);
