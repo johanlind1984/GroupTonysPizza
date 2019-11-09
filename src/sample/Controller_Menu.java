@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.WindowEvent;
 
 /**
@@ -72,16 +73,16 @@ public class Controller_Menu {
 
     
 
-    @FXML
-    public void handlePickPizza(ActionEvent pickPizza, WindowEvent cTextMenu) {
-        CheckBox checkBox = new CheckBox();
-        if (checkBox.isSelected()) {
-            isAmerican(true);
-        } else if (!checkBox.isSelected()) {
-            isAmerican(false);
-        } else
-            isAmerican(false);
-    }
+//    @FXML
+//    public void handlePickPizza(ActionEvent pickPizza, WindowEvent cTextMenu) {
+//        CheckBox checkBox = new CheckBox();
+//        if (checkBox.isSelected()) {
+//            isAmerican(true);
+//        } else if (!checkBox.isSelected()) {
+//            isAmerican(false);
+//        } else
+//            isAmerican(false);
+//    }
     
     
     @FXML
@@ -142,5 +143,8 @@ public class Controller_Menu {
     @FXML
     public void handlePayOrderBtn(ActionEvent payOrder) {
 
+    }
+
+    public void handlePickPizza(ContextMenuEvent contextMenuEvent) {
     }
 }
