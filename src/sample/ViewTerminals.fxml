@@ -27,7 +27,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="pizzaListID" layoutX="7.0" layoutY="95.0" onContextMenuRequested="#checkBoxHandler" onMouseClicked="#handlePickPizza" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="pizzaListID" layoutX="7.0" layoutY="95.0" onContextMenuRequested="#handlePickPizza" onMouseClicked="#handlePickPizza" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <ListView fx:id="extraListID" layoutX="310.0" layoutY="95.0" onMouseClicked="#handlePickExtra" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <Label alignment="CENTER" layoutX="160.0" layoutY="371.0" prefHeight="23.0" prefWidth="165.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Varukorg" />
                         <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" onMouseClicked="#handleCustomerOrderList" prefHeight="243.0" prefWidth="438.0" style="-fx-background-color: white;" />
