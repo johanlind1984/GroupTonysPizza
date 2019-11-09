@@ -61,21 +61,17 @@ public class Controller_Menu {
         extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
     }
     
+
     @FXML
-    public void checkBoxHandler() {
-        CheckBox checkBox = new CheckBox();
+    public void handlePickPizza(ActionEvent pickPizza) {
+    CheckBox checkBox = new CheckBox();
         if (checkBox.isSelected()) {
             isAmerican(true);
         } else {
             isAmerican(false);
         }
     }
-
-
-    @FXML
-    public void handlePickPizza(ActionEvent pickPizza) {
-
-    }
+    
 
     @FXML
     public void handlePickExtra(ActionEvent pickExtra) {
