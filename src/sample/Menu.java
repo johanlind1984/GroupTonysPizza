@@ -2,14 +2,14 @@ package sample;
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList<Pizza>allPizzaMenu=new ArrayList<>();
-    private ArrayList<Ingredient>allIngredientMenu=new ArrayList<>();
-    private ArrayList<Extras>allExtrasMenu= new ArrayList<>();
+    private ArrayList<Pizza>allPizzaMenu;
+    private ArrayList<Ingredient>allIngredientMenu;
+    private ArrayList<Extras>allExtrasMenu;
 
     public Menu() {
-        allPizzaMenu = new ArrayList<Pizza>();
-        allIngredientMenu = new ArrayList<Ingredient>();
-        allExtrasMenu = new ArrayList<Extras>();
+        allPizzaMenu = new ArrayList<>();
+        allIngredientMenu = new ArrayList<>();
+        allExtrasMenu = new ArrayList<>();
         createListOfIngredientsAndPizzas();
         createListOfExtras();
     }
@@ -39,73 +39,73 @@ public class Menu {
 
 
         Pizza margerita = new Pizza ("Margerita", 70.00);
-        margerita.included.add(tomato);
-        margerita.included.add(cheese);
+        margerita.addIngredientIncluded(tomato);
+        margerita.addIngredientIncluded(cheese);
         allPizzaMenu.add(margerita);
         Pizza funghi = new Pizza ("Funghi", 75.00);
-        funghi.included.add(tomato);
-        funghi.included.add(cheese);
-        funghi.included.add(mushrooms);
+        funghi.addIngredientIncluded(tomato);
+        funghi.addIngredientIncluded(cheese);
+        funghi.addIngredientIncluded(mushrooms);
         allPizzaMenu.add(funghi);
         Pizza vesuvio= new Pizza("Vesuvio", 75.00);
-        vesuvio.included.add(tomato);
-        vesuvio.included.add(cheese);
-        vesuvio.included.add(ham);
+        vesuvio.addIngredientIncluded(tomato);
+        vesuvio.addIngredientIncluded(cheese);
+        vesuvio.addIngredientIncluded(ham);
         allPizzaMenu.add(vesuvio);
         Pizza calzone = new Pizza("Calzone", 75.00);
-        calzone.included.add(tomato);
-        calzone.included.add(cheese);
-        calzone.included.add(ham);
+        calzone.addIngredientIncluded(tomato);
+        calzone.addIngredientIncluded(cheese);
+        calzone.addIngredientIncluded(ham);
         allPizzaMenu.add(calzone);
         Pizza capricciosa= new Pizza("Capricciosa", 75.00);
-        capricciosa.included.add(tomato);
-        capricciosa.included.add(cheese);
-        capricciosa.included.add(ham);
+        capricciosa.addIngredientIncluded(tomato);
+        capricciosa.addIngredientIncluded(cheese);
+        capricciosa.addIngredientIncluded(ham);
         allPizzaMenu.add(capricciosa);
         Pizza orientale= new Pizza("Orientale", 75.00);
-        orientale.included.add(tomato);
-        orientale.included.add(mincedMeat);
-        orientale.included.add(cheese);
-        orientale.included.add(onion);
+        orientale.addIngredientIncluded(tomato);
+        orientale.addIngredientIncluded(mincedMeat);
+        orientale.addIngredientIncluded(cheese);
+        orientale.addIngredientIncluded(onion);
         allPizzaMenu.add(orientale);
         Pizza alTonno=new Pizza ("Al Tonno", 75.00);
-        alTonno.included.add(tomato);
-        alTonno.included.add(cheese);
-        alTonno.included.add(tuna);
-        alTonno.included.add(onion);
+        alTonno.addIngredientIncluded(tomato);
+        alTonno.addIngredientIncluded(cheese);
+        alTonno.addIngredientIncluded(tuna);
+        alTonno.addIngredientIncluded(onion);
         allPizzaMenu.add(alTonno);
         Pizza campagnola=new Pizza ("Campagnola", 75.00);
-        campagnola.included.add(tomato);
-        campagnola.included.add(cheese);
-        campagnola.included.add(salami);
-        campagnola.included.add(onion);
-        campagnola.included.add(olives);
+        campagnola.addIngredientIncluded(tomato);
+        campagnola.addIngredientIncluded(cheese);
+        campagnola.addIngredientIncluded(salami);
+        campagnola.addIngredientIncluded(onion);
+        campagnola.addIngredientIncluded(olives);
         allPizzaMenu.add(campagnola);
         Pizza opera=new Pizza ("Opera", 75.00);
-        opera.included.add(tomato);
-        opera.included.add(cheese);
-        opera.included.add(ham);
-        opera.included.add(tuna);
+        opera.addIngredientIncluded(tomato);
+        opera.addIngredientIncluded(cheese);
+        opera.addIngredientIncluded(ham);
+        opera.addIngredientIncluded(tuna);
         allPizzaMenu.add(opera);
         Pizza bussola=new Pizza("Bussola", 75.00);
-        bussola.included.add(tomato);
-        bussola.included.add(cheese);
-        bussola.included.add(ham);
-        bussola.included.add(shrimp);
+        bussola.addIngredientIncluded(tomato);
+        bussola.addIngredientIncluded(cheese);
+        bussola.addIngredientIncluded(ham);
+        bussola.addIngredientIncluded(shrimp);
         allPizzaMenu.add(bussola);
         Pizza calzoneSpecial=new Pizza("Calzone Special", 80.00);
-        calzoneSpecial.included.add(tomato);
-        calzoneSpecial.included.add(cheese);
-        calzoneSpecial.included.add(ham);
-        calzoneSpecial.included.add(shrimp);
-        calzoneSpecial.included.add(mushrooms);
+        calzoneSpecial.addIngredientIncluded(tomato);
+        calzoneSpecial.addIngredientIncluded(cheese);
+        calzoneSpecial.addIngredientIncluded(ham);
+        calzoneSpecial.addIngredientIncluded(shrimp);
+        calzoneSpecial.addIngredientIncluded(mushrooms);
         allPizzaMenu.add(calzoneSpecial);
         Pizza colombo = new Pizza("Colombo", 80.00);
-        colombo.included.add(tomato);
-        colombo.included.add(cheese);
-        colombo.included.add(tuna);
-        colombo.included.add(shrimp);
-        colombo.included.add(olives);
+        colombo.addIngredientIncluded(tomato);
+        colombo.addIngredientIncluded(cheese);
+        colombo.addIngredientIncluded(tuna);
+        colombo.addIngredientIncluded(shrimp);
+        colombo.addIngredientIncluded(olives);
         allPizzaMenu.add(colombo);
     }
     public void createListOfExtras(){
@@ -141,4 +141,4 @@ public class Menu {
     }
 }
 
-}
+
