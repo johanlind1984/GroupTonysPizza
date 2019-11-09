@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tonymozzarellafx.Controller_Menu">
+<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_Menu">
    <children>
       <TabPane layoutY="-2.0" prefHeight="750.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
