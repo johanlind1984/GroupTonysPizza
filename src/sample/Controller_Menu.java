@@ -43,11 +43,15 @@ public class Controller_Menu {
     @FXML
     Button orderCompleteID;
     @FXML
-    ListView idPizzaList;
+    ListView pizzaListID;
     @FXML
-    ListView idPizzaList1;
+    ListView extraListID;
     @FXML
-    ListView idShoppingCart;
+    ListView orderListID;
+    @FXML
+    ListView chefOrderListID;
+    @FXML
+    ListView statusOrderListID;
     
 
     ObservableList<Pizza> pizzaObservableList;
