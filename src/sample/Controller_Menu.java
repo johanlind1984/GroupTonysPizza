@@ -5,27 +5,23 @@
  */
 package sample;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
-import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  *
  * @author Stefan
  */
+
+
 public class Controller_Menu {
-    
+
     @FXML
     Button payOrderID;
     @FXML
@@ -52,7 +48,7 @@ public class Controller_Menu {
     ListView chefOrderListID;
     @FXML
     ListView statusOrderListID;
-    
+
 
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
@@ -61,8 +57,8 @@ public class Controller_Menu {
 
     Menu menu;
 
-        @FXML
-        public void initialize() {
+       @FXML
+       public void initialize() {
             menu = new Menu();
             pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
             ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
@@ -74,19 +70,77 @@ public class Controller_Menu {
             //REDUNDANT METHOD BELOW
         }
 
-        public void handButtonActionPizza(ActionEvent e){
     
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("ViewTerminals.fxml"));
-            Stage primaryStage = new Stage();
-            Scene scene = new Scene(root, 350, 350);
-            
-            primaryStage.setTitle("System");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+    @FXML
+    public void handlePickPizza(ActionEvent pickPizza, WindowEvent cTextMenu) {
+        CheckBox checkBox = new CheckBox();
+        if (checkBox.isSelected()) {
+            isAmerican(true);
+        } else if (!checkBox.isSelected()) {
+            isAmerican(false);
+        } else
+            isAmerican(false);
     }
     
+    
+    @FXML
+    public void handlePickExtra(ActionEvent pickExtra) {
+
+    }
+
+    @FXML
+    public void handleCustomerOrderList(ActionEvent orderList) {
+
+    }
+
+    @FXML
+    public void handleChefOrderList(ActionEvent chefOrderList) {
+
+    }
+
+    @FXML
+    public void handleStatusOrderList(ActionEvent statusOrderList) {
+
+    }
+
+    @FXML
+    public void handleOrderCompleteBtn(ActionEvent orderComplete) {
+
+    }
+
+    @FXML
+    public void handleOrderInOvenBtn(ActionEvent orderInOven) {
+
+    }
+
+    @FXML
+    public void handleTakeOrderBtn(ActionEvent takeOrder) {
+
+    }
+
+    @FXML
+    public void handleRemoveOrderBtn(ActionEvent removeOrder) {
+
+    }
+
+    @FXML
+    public void handleSendOrderBtn(ActionEvent sendOrder) {
+
+    }
+
+    @FXML
+    public void handleRemoveBtn(ActionEvent removeItem) {
+
+    }
+
+    @FXML
+    public void handleChangeOrderBtn(ActionEvent changeOrder) {
+
+    }
+
+    @FXML
+    public void handlePayOrderBtn(ActionEvent payOrder) {
+
+    }
 }
