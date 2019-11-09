@@ -8,6 +8,8 @@ public class Pizza {
     private String name;
     private double price;
     private int ordernumber;
+    private boolean isAmerican;
+    private int orderStatus;
     private ArrayList<Ingredient> includedIngredients;
     private ArrayList<Ingredient> extraIngredients;
 
@@ -15,6 +17,10 @@ public class Pizza {
         this.name = name;
         this.price = price;
         this.ordernumber = 0;
+        this.isAmerican = false;
+        this.orderStatus = 0;
+        this.includedIngredients = new ArrayList<>();
+        this.extraIngredients = new ArrayList<>();
     }
 
     public void addIngredientIncluded(Ingredient ingredientToAdd) {
@@ -66,6 +72,22 @@ public class Pizza {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isAmerican() {
+        return isAmerican;
+    }
+
+    public int getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setAmerican(boolean american) {
+        isAmerican = american;
+    }
+
+    public void setOrderStatus(int orderStatusToSet) {
+        orderStatus = orderStatusToSet;
     }
 
     @Override

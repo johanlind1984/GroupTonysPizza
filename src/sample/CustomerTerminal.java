@@ -7,13 +7,13 @@ public class CustomerTerminal {
 
     private final Menu menu;
     private Order order;
-    private int orderCount;
+    private int orderID;
     private ArrayList<Pizza> pizzasInShoppingCart;
     private ArrayList<Extras> extrasInShoppingCart;
 
     public CustomerTerminal() {
         menu = new Menu();
-        orderCount = 1;
+        orderID = 1;
         order = new Order();
         pizzasInShoppingCart = new ArrayList<>();
         extrasInShoppingCart = new ArrayList<>();
@@ -22,7 +22,7 @@ public class CustomerTerminal {
     public boolean addExtraIngredientToPizza(Ingredient ingredientToAdd, Pizza pizzaToAddTo) {
         for (Pizza tempPizza : pizzasInShoppingCart) {
             if(tempPizza.equals(pizzaToAddTo)) {
-                tempPizza.addExtraIngredient(ingredientToAdd);
+                tempPizza.addIngredientExtra(ingredientToAdd);
                 return true;
             }
         }
@@ -40,7 +40,7 @@ public class CustomerTerminal {
     }
 
     public void addPizzaToShoppingCart(Pizza pizzaToAddToCart) {
-        pizzasInShoppingCart.add(new Pizza(pizzaToAddToCart.getName(), pizzaToAddToCart.getPrice(), pizzaToAddToCart.getIncludedIngredients()));
+        pizzasInShoppingCart.add(new Pizza(pizzaToAddToCart.getName(), pizzaToAddToCart.getPrice()));
     }
 
     public boolean removePizzaFromShoppingCart(Pizza pizzaToRemoveFromCart) {
@@ -64,11 +64,16 @@ public class CustomerTerminal {
     }
 
     public boolean checkOutShoppingCart() {
-        order.setExtrasInOrder(extrasInShoppingCart);
+        order.setExtrasOrder(extrasInShoppingCart);
         order.setPizzasInOrder(pizzasInShoppingCart);
-        order.setOrderNumber(getOrderCount());
 
-        if (order.getTotalPrice() != 0) {
+        if (orderID>100) {
+            orderID = 1;
+        }
+
+        order.setOrderID(orderID);
+
+        if (order.getTotalPriceOfOrder() != 0) {
             if (CardReader.processPayment()) {
                 return true;
             }
@@ -84,12 +89,12 @@ public class CustomerTerminal {
         return order;
     }
 
-    public int getOrderCount() {
-        if(orderCount < 100) {
-            return orderCount;
+    public int getOrderID() {
+        if(orderID < 100) {
+            return orderID;
         } else {
-            orderCount = 1;
-            return orderCount;
+            orderID = 1;
+            return orderID;
         }
 
     }
