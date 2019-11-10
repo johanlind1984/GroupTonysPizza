@@ -55,17 +55,30 @@ public class Controller_Menu {
     ObservableList<Ingredient> ingredientObservableList;
     ObservableList<Extras> extrasObservableList;
     ObservableList<Order> orderObservableList;
+    ObservableList<Pizza> chefObservableList;
 
     Menu menu;
+    CustomerTerminal customerTerminal;
+    ChefTerminal chefTerminal;
+    StatusTerminal statusTerminal;
 
        @FXML
        public void initialize() {
             menu = new Menu();
+            customerTerminal = new CustomerTerminal();
+            chefTerminal = new ChefTerminal("ChefTerminal");
+            statusTerminal = new StatusTerminal();
+            
             pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
             ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
             extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
+            chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
+            orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
             pizzaListID.setItems(pizzaObservableList);
             extraListID.setItems(extrasObservableList);
+            orderListID.setItems(orderObservableList);
+            chefOrderListID.setItems(chefObservableList);
+            statusOrderListID.setItems(orderObservableList);
 
             
             //REDUNDANT METHOD BELOW
