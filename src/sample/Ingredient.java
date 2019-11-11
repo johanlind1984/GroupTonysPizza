@@ -29,6 +29,6 @@ public class Ingredient {
         this.name = name;
     }
     public String toString(){
-      return name+" "+price+" kr";
+      return name+"\t"+price+" kr";
     }
 }
