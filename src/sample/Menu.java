@@ -109,7 +109,7 @@ public class Menu {
         allPizzaMenu.add(colombo);
     }
     public void createListOfExtras(){
-        Extras water = new Extras("Water", 0.00);
+        Extras water = new Extras("Vatten", 0.00);
         allExtrasMenu.add(water);
         Extras mineralWaterNatural=new Extras("Mineralvatten naturell", 20.00);
         allExtrasMenu.add(mineralWaterNatural);
@@ -140,5 +140,3 @@ public class Menu {
         return allExtrasMenu;
     }
 }
-
-
