@@ -49,7 +49,7 @@ public class Controller_Menu {
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
     ObservableList<Extras> extrasObservableList;
-    ObservableList<Pizza> shoppingCartObservableList;
+    ObservableList<Product> shoppingCartObservableList;
     ObservableList<Pizza> chefObservableList;
 
     Menu menu;

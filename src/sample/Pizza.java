@@ -3,7 +3,7 @@ package sample;
 import java.util.ArrayList;
 
 // Written by Tadevos
-public class Pizza {
+public class Pizza extends Product {
 
     private String name;
     private double price;
