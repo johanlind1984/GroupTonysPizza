@@ -16,16 +16,13 @@ public class StatusTerminal {
     }
 
     public boolean checkIfAnyOrderIsComplete() {
-        boolean isOrderComplete = true;
-
-        for(int i = 0; i < orders.size();i++) {
-            for (Pizza pizza : orders.get(i).getPizzas()) {
-                if(pizza.getOrderStatus() != 3) {
-                    isOrderComplete = false;
-                }
+        for (Order order : orders) {
+            if(order.isOrderComplete) {
+                return true;
             }
         }
-        return isOrderComplete;
+
+        return false;
     }
 
     public void completeOrder(Order orderToComplete) {

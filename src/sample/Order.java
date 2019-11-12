@@ -7,6 +7,7 @@ public class Order {
     private ArrayList<Extras> extrasInCart;
     int orderID;
     double totalPriceOfOrder;
+    boolean isOrderComplete;
 
     public Order()
     {
@@ -14,6 +15,7 @@ public class Order {
         extrasInCart = new ArrayList<>();
         totalPriceOfOrder = 0;
         this.orderID = 0;
+        isOrderComplete = false;
     }
 
     public ArrayList<Pizza> getPizzas() {
@@ -26,6 +28,18 @@ public class Order {
 
     public void setOrderID(int orderID) {
         this.orderID = orderID;
+    }
+
+    public boolean isOrderComplete() {
+        boolean isAllPizzaDone = true;
+
+        for (Pizza pizza : pizzasInCart) {
+            if(pizza.getOrderStatus() != 3) {
+                isAllPizzaDone = false;
+            }
+        }
+        isOrderComplete = isAllPizzaDone;
+        return isAllPizzaDone;
     }
 
     public int getOrderID() { // Retunerar order
