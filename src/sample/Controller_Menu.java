@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -114,6 +113,7 @@ public class Controller_Menu {
         chefOrderListID.setItems(chefObservableList);
         statusOrderListID.refresh();
         statusOrderListID.setItems(orderObservableList);
+        ShoppingCartTotalPriceID.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
     }
 
     public void prepareCustomerTerminalForNewCustomer() {
