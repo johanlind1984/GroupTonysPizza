@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Order {
     private ArrayList<Pizza> pizzasInCart;
     private ArrayList<Extras> extrasInCart;
-    int orderID;
-    double totalPriceOfOrder;
-    boolean isOrderComplete;
+    private int orderID;
+    private double totalPriceOfOrder;
+    private boolean isOrderComplete;
 
     public Order()
     {
