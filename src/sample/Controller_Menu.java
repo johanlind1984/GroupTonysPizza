@@ -199,11 +199,12 @@ public class Controller_Menu {
 
     @FXML
     public void handlePayOrderBtn(ActionEvent payOrder) {
-        customerTerminal.checkOutShoppingCart();
-        statusTerminal.addOrder(customerTerminal.getOrder());
-        chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
-        prepareCustomerTerminalForNewCustomer();
-        refreshUI();
+        if(customerTerminal.checkOutShoppingCart()) {
+            statusTerminal.addOrder(customerTerminal.getOrder());
+            chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
+            prepareCustomerTerminalForNewCustomer();
+            refreshUI();
+        }
 
     }
 

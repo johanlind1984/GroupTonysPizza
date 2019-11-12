@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42c2ddfc-c53a-4fe7-bdb9-79b0d9eec91b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller_Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +99,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CustomerTerminal.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
