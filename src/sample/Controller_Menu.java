@@ -85,22 +85,10 @@ public class Controller_Menu {
         customerTerminal = new CustomerTerminal();
         chefTerminal = new ChefTerminal("ChefTerminal");
         statusTerminal = new StatusTerminal();
-
-        pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
-        ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
-        extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
-        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
-        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
-        pizzaListID.setItems(pizzaObservableList);
-        extraListID.setItems(extrasObservableList);
-        orderListID.setItems(shoppingCartObservableList);
-        chefOrderListID.setItems(chefObservableList);
-        statusOrderListID.setItems(orderObservableList);
-
+        refreshUI();
     }
 
-    public void refrehUI() {
+    public void refreshUI() {
         pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
         ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
         extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
@@ -118,7 +106,7 @@ public class Controller_Menu {
 
     public void prepareCustomerTerminalForNewCustomer() {
         customerTerminal.clearShoppingCartsAndOrder();
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
@@ -142,21 +130,21 @@ public class Controller_Menu {
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
         statusTerminal.checkIfAnyOrderIsComplete();
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
     public void handleOrderInOvenBtn(ActionEvent orderInOven) {
         chefTerminal.setOrderStatus(2, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         statusTerminal.checkIfAnyOrderIsComplete();
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
     public void handleTakeOrderBtn(ActionEvent takeOrder) {
         chefTerminal.setOrderStatus(1, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         statusTerminal.checkIfAnyOrderIsComplete();
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
@@ -166,7 +154,7 @@ public class Controller_Menu {
         }
 
         statusTerminal.completeOrder((Order) statusOrderListID.getSelectionModel().getSelectedItem());
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
@@ -176,7 +164,7 @@ public class Controller_Menu {
         }
 
         statusTerminal.completeOrder((Order) statusOrderListID.getSelectionModel().getSelectedItem());
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
@@ -189,7 +177,7 @@ public class Controller_Menu {
             customerTerminal.removeExtraFromCart((Extras) orderListID.getSelectionModel().getSelectedItem());
         }
 
-        refrehUI();
+        refreshUI();
     }
 
     @FXML
@@ -215,7 +203,7 @@ public class Controller_Menu {
         statusTerminal.addOrder(customerTerminal.getOrder());
         chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
         prepareCustomerTerminalForNewCustomer();
-        refrehUI();
+        refreshUI();
 
     }
 
@@ -223,13 +211,13 @@ public class Controller_Menu {
         Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
         ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
-        refrehUI();
+        refreshUI();
     }
 
     public void handlePickExtra(MouseEvent contextMenuEvent) {
         Extras extrasToAddToOrder = (Extras) extraListID.getSelectionModel().getSelectedItem();
         customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
         ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
-        refrehUI();
+        refreshUI();
     }
 }
