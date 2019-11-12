@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
@@ -31,17 +32,17 @@
                         <ListView fx:id="extraListID" layoutX="310.0" layoutY="95.0" onMouseClicked="#handlePickExtra" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <Label alignment="CENTER" layoutX="160.0" layoutY="371.0" prefHeight="23.0" prefWidth="165.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Varukorg" />
                         <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" onMouseClicked="#handleCustomerOrderList" prefHeight="243.0" prefWidth="438.0" style="-fx-background-color: white;" />
-                        <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="401.0" mnemonicParsing="false" onAction="#handlePayOrderBtn" onMouseClicked="#handlePayOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
+                        <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="606.0" mnemonicParsing="false" onAction="#handlePayOrderBtn" onMouseClicked="#handlePayOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="changeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="504.0" mnemonicParsing="false" onAction="#handleChangeOrderBtn" onMouseClicked="#handleChangeOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ändra">
+                        <Button fx:id="changeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleChangeOrderBtn" onMouseClicked="#handleChangeOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ändra">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="removeItemID" alignment="BOTTOM_CENTER" layoutX="43.0" layoutY="606.0" mnemonicParsing="false" onAction="#handleRemoveBtn" onMouseClicked="#handleRemoveBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort">
+                        <Button fx:id="removeItemID" alignment="BOTTOM_CENTER" layoutX="40.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleRemoveBtn" onMouseClicked="#handleRemoveBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -60,6 +61,7 @@
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+                        <TextField fx:id="ShoppingCartTotalPriceID" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="572.0" prefHeight="26.0" prefWidth="86.0" />
                      </children>
                   </AnchorPane>
             </content>
