@@ -14,8 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -100,19 +98,27 @@ public class Controller_Menu {
         chefOrderListID.setItems(chefObservableList);
         statusOrderListID.setItems(orderObservableList);
 
-        //REDUNDANT METHOD BELOW
     }
 
-//    @FXML
-//    public void handlePickPizza(ActionEvent pickPizza, WindowEvent cTextMenu) {
-//        CheckBox checkBox = new CheckBox();
-//        if (checkBox.isSelected()) {
-//            isAmerican(true);
-//        } else if (!checkBox.isSelected()) {
-//            isAmerican(false);
-//        } else
-//            isAmerican(false);
-//    }
+    public void refrehUI() {
+        pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
+        ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
+        extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
+        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
+        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
+        pizzaListID.setItems(pizzaObservableList);
+        extraListID.setItems(extrasObservableList);
+        orderListID.setItems(shoppingCartObservableList);
+        chefOrderListID.setItems(chefObservableList);
+        statusOrderListID.refresh();
+        statusOrderListID.setItems(orderObservableList);
+    }
+
+    public void prepareCustomerTerminalForNewCustomer() {
+        customerTerminal.clearShoppingCartsAndOrder();
+        refrehUI();
+    }
 
     @FXML
     public void handleCustomerOrderList(ActionEvent orderList) {
@@ -134,49 +140,42 @@ public class Controller_Menu {
         chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-        chefOrderListID.setItems(chefObservableList);
         statusTerminal.checkIfAnyOrderIsComplete();
-
-        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
-        statusOrderListID.setItems(null);
-        statusOrderListID.setItems(orderObservableList);
-        System.out.println(orderObservableList.get(0).toString());
-        System.out.println("============================== " + statusTerminal.getOrders().get(0).toString());
+        refrehUI();
     }
 
     @FXML
     public void handleOrderInOvenBtn(ActionEvent orderInOven) {
         chefTerminal.setOrderStatus(2, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         statusTerminal.checkIfAnyOrderIsComplete();
-        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
-        statusOrderListID.setItems(null);
-        statusOrderListID.setItems(orderObservableList);
+        refrehUI();
     }
 
     @FXML
     public void handleTakeOrderBtn(ActionEvent takeOrder) {
         chefTerminal.setOrderStatus(1, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         statusTerminal.checkIfAnyOrderIsComplete();
-        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
-        statusOrderListID.setItems(null);
-        statusOrderListID.setItems(orderObservableList);
-
-
+        refrehUI();
     }
 
     @FXML
     public void handleRemoveOrderBtn(ActionEvent removeOrder) {
+        for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListID.getSelectionModel().getSelectedItem()).getPizzas()) {
+            chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
+        }
 
+        statusTerminal.completeOrder((Order) statusOrderListID.getSelectionModel().getSelectedItem());
+        refrehUI();
     }
 
     @FXML
     public void handleSendOrderBtn(ActionEvent sendOrder) {
-        System.out.println("\n\n\n IN HANDLESENDORDERBTN \n\n\n");
-        Order tempOrder = (Order) statusOrderListID.getSelectionModel().getSelectedItem();
-        statusTerminal.completeOrder(tempOrder);
-        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
-        statusOrderListID.setItems(orderObservableList);
+        for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListID.getSelectionModel().getSelectedItem()).getPizzas()) {
+            chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
+        }
 
+        statusTerminal.completeOrder((Order) statusOrderListID.getSelectionModel().getSelectedItem());
+        refrehUI();
     }
 
     @FXML
@@ -189,10 +188,7 @@ public class Controller_Menu {
             customerTerminal.removeExtraFromCart((Extras) orderListID.getSelectionModel().getSelectedItem());
         }
 
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
-        orderListID.setItems(shoppingCartObservableList);
-
-
+        refrehUI();
     }
 
     @FXML
@@ -216,30 +212,23 @@ public class Controller_Menu {
     public void handlePayOrderBtn(ActionEvent payOrder) {
         customerTerminal.checkOutShoppingCart();
         statusTerminal.addOrder(customerTerminal.getOrder());
-        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
-        statusOrderListID.setItems(orderObservableList);
         chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
-        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-        chefOrderListID.setItems(chefObservableList);
+        prepareCustomerTerminalForNewCustomer();
+        refrehUI();
 
     }
 
     public void handlePickPizza(MouseEvent contextMenuEvent) {
-
         Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
-        orderListID.setItems(shoppingCartObservableList);
         ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
-
+        refrehUI();
     }
 
     public void handlePickExtra(MouseEvent contextMenuEvent) {
-
         Extras extrasToAddToOrder = (Extras) extraListID.getSelectionModel().getSelectedItem();
         customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
-        orderListID.setItems(shoppingCartObservableList);
         ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
+        refrehUI();
     }
 }
