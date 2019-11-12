@@ -51,7 +51,7 @@ public class CustomerTerminal {
         return false;
     }
 
-    public void addExtraToCart(Extras extraToAddToCart) {
+    public void addExtraToShoppingCart(Extras extraToAddToCart) {
         extrasInShoppingCart.add(extraToAddToCart);
     }
 
