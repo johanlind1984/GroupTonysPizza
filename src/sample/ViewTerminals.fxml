@@ -31,7 +31,7 @@
                         <ListView fx:id="pizzaListID" layoutX="7.0" layoutY="95.0" onMouseClicked="#handlePickPizza" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <ListView fx:id="extraListID" layoutX="310.0" layoutY="95.0" onMouseClicked="#handlePickExtra" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <Label alignment="CENTER" layoutX="160.0" layoutY="371.0" prefHeight="23.0" prefWidth="165.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Varukorg" />
-                        <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" onMouseClicked="#handleCustomerOrderList" prefHeight="243.0" prefWidth="438.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" onMouseClicked="#handleCustomerOrderList" prefHeight="195.0" prefWidth="438.0" style="-fx-background-color: white;" />
                         <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="606.0" mnemonicParsing="false" onAction="#handlePayOrderBtn" onMouseClicked="#handlePayOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
                            <font>
                               <Font name="System Bold" size="18.0" />
@@ -61,7 +61,7 @@
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-                        <TextField fx:id="ShoppingCartTotalPriceID" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="572.0" prefHeight="26.0" prefWidth="86.0" />
+                        <TextField fx:id="ShoppingCartTotalPriceID" alignment="CENTER_RIGHT" layoutX="148.0" layoutY="607.0" prefHeight="36.0" prefWidth="438.0" promptText="Det totala priset" />
                      </children>
                   </AnchorPane>
             </content>
