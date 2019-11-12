@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -35,6 +36,8 @@ public class Controller_Menu {
     Button orderInOvenID;
     @FXML
     Button orderCompleteID;
+    @FXML
+    TextField ShoppingCartTotalPriceID;
     @FXML
     ListView pizzaListID;
     @FXML
