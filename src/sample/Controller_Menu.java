@@ -5,6 +5,7 @@
  */
 package sample;
 
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 /**
  *
@@ -39,6 +47,12 @@ public class Controller_Menu {
     @FXML
     Button orderCompleteID;
     @FXML
+    Button addIngredientsToPizzaID;
+    @FXML
+    Button backToMainID;
+    @FXML
+    Button customizedPizzaToOrderID;
+    @FXML
     TextField ShoppingCartTotalPriceID;
     @FXML
     ListView pizzaListID;
@@ -50,6 +64,10 @@ public class Controller_Menu {
     ListView chefOrderListID;
     @FXML
     ListView statusOrderListID;
+    @FXML 
+    ListView addIngredientsListID;
+    @FXML
+    ListView changedPizzaListID;
 
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
@@ -178,8 +196,20 @@ public class Controller_Menu {
     }
 
     @FXML
-    public void handleChangeOrderBtn(ActionEvent changeOrder) {
-
+    void handleChangeOrderBtn(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePizzaWindow.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            
+            stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
+            stage.setTitle("changePizzaWindow");
+            stage.setAlwaysOnTop(true);
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (IOException e) {
+            Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     @FXML
