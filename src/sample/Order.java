@@ -49,7 +49,7 @@ public class Order {
     public double getTotalPriceOfOrder(){
 
         for (Pizza pizza : pizzasInCart) {
-            totalPriceOfOrder = totalPriceOfOrder + pizza.getPrice();
+            totalPriceOfOrder += pizza.getPrice();
         }
 
         for (Extras extras : extrasInCart) {
@@ -71,11 +71,10 @@ public class Order {
         String stringToReturn = orderID + "\n\t";
 
         for (Pizza pizza : pizzasInCart) {
-            stringToReturn += pizza.getName() + " " + pizza.getOrderStatus() + "\n\t";
+            stringToReturn += pizza.getName() + " " + pizza.getOrderStatus() + "\n\tExtras Ingredients:";
             for (Ingredient ingredient : pizza.getExtraIngredients()) {
                 stringToReturn += "+" + ingredient.getName();
             }
-
         }
 
         stringToReturn += "\n\t";
@@ -84,7 +83,8 @@ public class Order {
             stringToReturn += extra.getName() + ", ";
         }
 
-        stringToReturn += "\n\n";
+        stringToReturn += "\n\t Order Done: " + isOrderComplete + "\n";
+
         return stringToReturn;
     }
 }

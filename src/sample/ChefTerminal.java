@@ -1,5 +1,6 @@
 package sample;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChefTerminal {
 
@@ -20,9 +21,11 @@ public class ChefTerminal {
     }
 
     public void addListOfPizzasToQueue(ArrayList<Pizza> newOrderOfPizzas) {
-        for (Pizza pizza : newOrderOfPizzas) {
-            queueOfPizzasToBake.add(pizza);
-        }
+        queueOfPizzasToBake.addAll(newOrderOfPizzas);
+
+//        for (Pizza pizza : newOrderOfPizzas) {
+//            queueOfPizzasToBake.add(pizza);
+//        }
     }
 
     public boolean removePizzaFromBakeQueue(Pizza pizzaToRemove) {
