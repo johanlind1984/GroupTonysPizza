@@ -31,8 +31,11 @@ public class Order {
     }
 
     public boolean isOrderComplete() {
-        boolean isAllPizzaDone = true;
+        if(pizzasInCart.isEmpty()) {
+            return true;
+        }
 
+        boolean isAllPizzaDone = true;
         for (Pizza pizza : pizzasInCart) {
             if(pizza.getOrderStatus() != 3) {
                 isAllPizzaDone = false;

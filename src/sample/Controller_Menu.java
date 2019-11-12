@@ -89,6 +89,7 @@ public class Controller_Menu {
     }
 
     public void refreshUI() {
+        statusTerminal.checkIfAnyOrderIsComplete();
         pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
         ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
         extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
@@ -129,21 +130,18 @@ public class Controller_Menu {
         chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-        statusTerminal.checkIfAnyOrderIsComplete();
         refreshUI();
     }
 
     @FXML
     public void handleOrderInOvenBtn(ActionEvent orderInOven) {
         chefTerminal.setOrderStatus(2, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
-        statusTerminal.checkIfAnyOrderIsComplete();
         refreshUI();
     }
 
     @FXML
     public void handleTakeOrderBtn(ActionEvent takeOrder) {
         chefTerminal.setOrderStatus(1, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
-        statusTerminal.checkIfAnyOrderIsComplete();
         refreshUI();
     }
 
