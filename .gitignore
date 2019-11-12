@@ -12,3 +12,8 @@
 *.jar
 *.jnlp
 *.js
+dist/TonyMozzarellaFX.html
+dist/TonyMozzarellaFX.jar
+dist/TonyMozzarellaFX.jnlp
+build/built-jar.properties
+build/built-jar.properties
