@@ -122,12 +122,12 @@
                         <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
                         <ListView fx:id="statusOrderListID" layoutX="162.0" layoutY="94.0" onMouseClicked="#handleStatusOrderList" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
-                        <Button fx:id="sendOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleSendOrderBtn" onMouseClicked="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Lämna ut order">
+                        <Button fx:id="sendOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleSendOrderBtn"  onMouseClicked="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Lämna ut order">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="removeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleRemoveOrderBtn" onMouseClicked="#handleRemoveOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort order">
+                        <Button fx:id="removeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleSendOrderBtn" onMouseClicked="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort order">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>

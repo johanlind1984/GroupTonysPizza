@@ -5,11 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ChefTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChefTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller_Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Extras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Extras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Ingredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ViewTerminals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ViewTerminals.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +101,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller_Menu.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
