@@ -54,6 +54,7 @@ public class Controller_Menu {
     ObservableList<Extras> extrasObservableList;
     ObservableList<Product> shoppingCartObservableList;
     ObservableList<Pizza> chefObservableList;
+    ObservableList<Order> orderObservableList;
 
     Menu menu;
     CustomerTerminal customerTerminal;
@@ -72,6 +73,7 @@ public class Controller_Menu {
         extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
         chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
         shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
+        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
         pizzaListID.setItems(pizzaObservableList);
         extraListID.setItems(extrasObservableList);
         orderListID.setItems(shoppingCartObservableList);
@@ -144,6 +146,12 @@ public class Controller_Menu {
 
     @FXML
     public void handlePayOrderBtn(ActionEvent payOrder) {
+        customerTerminal.checkOutShoppingCart();
+        statusTerminal.addOrder(customerTerminal.getOrder());
+        orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
+        statusOrderListID.setItems(orderObservableList);
+        chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
+        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
 
     }
 
