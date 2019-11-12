@@ -15,10 +15,17 @@ public class StatusTerminal {
         orders.add(orderToAdd);
     }
 
-    public void checkIfAnyOrderIsComplete() {
-        // for each trhrough the orderlist, check all pizzas in order if status is set to complete. If all pizzas have
-        // status complete the order is done.
-        //
+    public boolean checkIfAnyOrderIsComplete() {
+        boolean isOrderComplete = true;
+
+        for(int i = 0; i < orders.size();i++) {
+            for (Pizza pizza : orders.get(i).getPizzas()) {
+                if(pizza.getOrderStatus() != 3) {
+                    isOrderComplete = false;
+                }
+            }
+        }
+        return isOrderComplete;
     }
 
     public void completeOrder(Order orderToComplete) {
