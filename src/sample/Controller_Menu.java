@@ -97,6 +97,7 @@ public class Controller_Menu {
         chefOrderListID.setItems(chefObservableList);
         statusOrderListID.refresh();
         statusOrderListID.setItems(orderObservableList);
+        ShoppingCartTotalPriceID.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
     }
 
     public void prepareCustomerTerminalForNewCustomer() {
