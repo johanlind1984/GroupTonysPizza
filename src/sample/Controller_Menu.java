@@ -89,13 +89,19 @@ public class Controller_Menu {
         ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
         extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
         chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
         orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
         pizzaListID.setItems(pizzaObservableList);
         extraListID.setItems(extrasObservableList);
         orderListID.setItems(shoppingCartObservableList);
         chefOrderListID.setItems(chefObservableList);
+        statusOrderListID.refresh();
         statusOrderListID.setItems(orderObservableList);
+    }
+
+    public void prepareCustomerTerminalForNewCustomer() {
+        customerTerminal.clearShoppingCartsAndOrder();
+        refrehUI();
     }
 
     @FXML
@@ -138,14 +144,21 @@ public class Controller_Menu {
 
     @FXML
     public void handleRemoveOrderBtn(ActionEvent removeOrder) {
+        for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListID.getSelectionModel().getSelectedItem()).getPizzas()) {
+            chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
+        }
 
+        statusTerminal.completeOrder((Order) statusOrderListID.getSelectionModel().getSelectedItem());
+        refrehUI();
     }
 
     @FXML
     public void handleSendOrderBtn(ActionEvent sendOrder) {
-        System.out.println("\n\n\n IN HANDLESENDORDERBTN \n\n\n");
-        Order tempOrder = (Order) statusOrderListID.getSelectionModel().getSelectedItem();
-        statusTerminal.completeOrder(tempOrder);
+        for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListID.getSelectionModel().getSelectedItem()).getPizzas()) {
+            chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
+        }
+
+        statusTerminal.completeOrder((Order) statusOrderListID.getSelectionModel().getSelectedItem());
         refrehUI();
     }
 
@@ -172,6 +185,7 @@ public class Controller_Menu {
         customerTerminal.checkOutShoppingCart();
         statusTerminal.addOrder(customerTerminal.getOrder());
         chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
+        prepareCustomerTerminalForNewCustomer();
         refrehUI();
 
     }
