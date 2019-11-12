@@ -8,6 +8,7 @@ public class CustomerTerminal {
     private final Menu menu;
     private Order order;
     private int orderID;
+    private int totalPriceOfShoppingCart;
     private ArrayList<Pizza> pizzasInShoppingCart;
     private ArrayList<Extras> extrasInShoppingCart;
 
@@ -15,6 +16,7 @@ public class CustomerTerminal {
         menu = new Menu();
         orderID = 1;
         order = new Order();
+        totalPriceOfShoppingCart = 0;
         pizzasInShoppingCart = new ArrayList<>();
         extrasInShoppingCart = new ArrayList<>();
     }
@@ -61,6 +63,23 @@ public class CustomerTerminal {
             return true;
         }
         return false;
+    }
+
+    public int getTotalPriceOfShoppingCart() {
+        int priceToReturn = 0;
+
+        for (Pizza pizza : pizzasInShoppingCart) {
+            priceToReturn += pizza.getPrice();
+            for (Ingredient extraIngredient : pizza.getExtraIngredients()) {
+                priceToReturn += extraIngredient.getPrice();
+            }
+        }
+
+        for (Extras extra : extrasInShoppingCart) {
+            priceToReturn += extra.getPrice();
+        }
+
+        return priceToReturn;
     }
 
     public boolean checkOutShoppingCart() {

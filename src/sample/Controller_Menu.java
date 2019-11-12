@@ -153,6 +153,7 @@ public class Controller_Menu {
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
         shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
         orderListID.setItems(shoppingCartObservableList);
+        ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
 
     }
 
@@ -162,6 +163,6 @@ public class Controller_Menu {
         customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
         shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
         orderListID.setItems(shoppingCartObservableList);
-
+        ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
     }
 }
