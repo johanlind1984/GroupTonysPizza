@@ -107,6 +107,13 @@ public class CustomerTerminal {
         return extrasInShoppingCart;
     }
 
+    public ArrayList<Product> getShoppingCart() {
+        ArrayList<Product> listToReturn = new ArrayList<>(pizzasInShoppingCart);
+        listToReturn.addAll(extrasInShoppingCart);
+        return listToReturn;
+
+    }
+
     public void clearShoppingCartsAndOrder() {
         order = new Order();
         pizzasInShoppingCart = new ArrayList<Pizza>();

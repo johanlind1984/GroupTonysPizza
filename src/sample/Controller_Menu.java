@@ -88,10 +88,6 @@ public class Controller_Menu {
 //        } else
 //            isAmerican(false);
 //    }
-    @FXML
-    public void handlePickExtra(ActionEvent pickExtra) {
-
-    }
 
     @FXML
     public void handleCustomerOrderList(ActionEvent orderList) {
@@ -152,7 +148,7 @@ public class Controller_Menu {
 
         Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
         orderListID.setItems(shoppingCartObservableList);
 
     }
@@ -161,7 +157,7 @@ public class Controller_Menu {
 
         Extras extrasToAddToOrder = (Extras) extraListID.getSelectionModel().getSelectedItem();
         customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
-        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getExtrasInShoppingCart());
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
         orderListID.setItems(shoppingCartObservableList);
 
     }
