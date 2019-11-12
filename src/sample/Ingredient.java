@@ -19,6 +19,6 @@ public class Ingredient extends Product {
     }
 
     public String toString(){
-      return name+" "+price+" kr";
+      return name+"\t"+price+" kr";
     }
 }
