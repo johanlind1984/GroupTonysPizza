@@ -22,7 +22,7 @@ public class Extras extends Product {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat df = new DecimalFormat("#.00");
         return name+" "+ df.format(price)+" kr";
     }
 }
