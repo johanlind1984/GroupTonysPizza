@@ -85,13 +85,6 @@ public class CustomerTerminal {
     public boolean checkOutShoppingCart() {
         order.setExtrasOrder(extrasInShoppingCart);
         order.setPizzasInOrder(pizzasInShoppingCart);
-
-        if (orderID>100) {
-            orderID = 1;
-        } else {
-            orderID += 1;
-        }
-
         order.setOrderID(orderID);
 
         if (order.getTotalPriceOfOrder() != 0) {
@@ -115,7 +108,7 @@ public class CustomerTerminal {
         if(orderID < 100) {
             return orderID;
         } else {
-            orderID = 1;
+            orderID = 0;
             return orderID;
         }
 
@@ -140,5 +133,7 @@ public class CustomerTerminal {
         order = new Order();
         pizzasInShoppingCart = new ArrayList<Pizza>();
         extrasInShoppingCart = new ArrayList<Extras>();
+        orderID = getOrderID() + 1;
+        totalPriceOfShoppingCart = 0;
     }
 }

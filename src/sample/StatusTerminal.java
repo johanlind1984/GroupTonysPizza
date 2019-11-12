@@ -17,7 +17,7 @@ public class StatusTerminal {
 
     public boolean checkIfAnyOrderIsComplete() {
         for (Order order : orders) {
-            if(order.isOrderComplete) {
+            if(order.isOrderComplete()) {
                 return true;
             }
         }
