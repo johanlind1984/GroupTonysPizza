@@ -85,9 +85,9 @@ public class Pizza extends Product {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("0.00");
         String stringToReturn = name;
-        stringToReturn += "\t" + df.format(price) + "kr" + "\n";
+        stringToReturn += " " + df.format(price) + " kr" + '\n';
 
         for (Ingredient ingredient : includedIngredients) {
             stringToReturn += ingredient.getName() + ", ";

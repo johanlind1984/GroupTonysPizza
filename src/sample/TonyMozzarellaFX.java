@@ -31,11 +31,7 @@ public class TonyMozzarellaFX extends Application {
         
         stage.setScene(scene);
         stage.setTitle("Tony Mozzarella's Pizza");
-
-        stage.getIcons().add(new Image("file:TonyMozzarellaImages\\flag.png"));
-
         stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
-
         stage.show();
     }  catch (IOException ex){
         Logger.getLogger(TonyMozzarellaFX.class.getName()).log(Level.SEVERE, null, ex);
