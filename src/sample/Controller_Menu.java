@@ -10,10 +10,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.stage.WindowEvent;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -54,7 +52,7 @@ public class Controller_Menu {
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
     ObservableList<Extras> extrasObservableList;
-    ObservableList<Order> orderObservableList;
+    ObservableList<Pizza> shoppingCartObservableList;
     ObservableList<Pizza> chefObservableList;
 
     Menu menu;
@@ -68,17 +66,17 @@ public class Controller_Menu {
             customerTerminal = new CustomerTerminal();
             chefTerminal = new ChefTerminal("ChefTerminal");
             statusTerminal = new StatusTerminal();
-            
+
             pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
             ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
             extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
             chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-            orderObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
+            shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
             pizzaListID.setItems(pizzaObservableList);
             extraListID.setItems(extrasObservableList);
-            orderListID.setItems(orderObservableList);
+            orderListID.setItems(shoppingCartObservableList);
             chefOrderListID.setItems(chefObservableList);
-            statusOrderListID.setItems(orderObservableList);
+            statusOrderListID.setItems(shoppingCartObservableList);
 
             
             //REDUNDANT METHOD BELOW
@@ -158,6 +156,12 @@ public class Controller_Menu {
 
     }
 
-    public void handlePickPizza(ContextMenuEvent contextMenuEvent) {
+    public void handlePickPizza(MouseEvent contextMenuEvent) {
+
+           Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
+           customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
+           shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
+           orderListID.setItems(shoppingCartObservableList);
+
     }
 }
