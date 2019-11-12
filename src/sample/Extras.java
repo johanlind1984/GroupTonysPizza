@@ -1,6 +1,6 @@
 package sample;
 
-public class Extras {
+public class Extras extends Product {
     // Written by Tadevos
     private String name;
     private double price;
