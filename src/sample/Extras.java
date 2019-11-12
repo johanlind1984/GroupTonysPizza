@@ -1,5 +1,7 @@
 package sample;
 
+import java.text.DecimalFormat;
+
 public class Extras extends Product {
     // Written by Tadevos
     private String name;
@@ -28,6 +30,7 @@ public class Extras extends Product {
 
     @Override
     public String toString() {
-        return name+" "+ price+" kr";
+        DecimalFormat df = new DecimalFormat("0.00");
+        return name+" "+ df.format(price)+" kr";
     }
 }
