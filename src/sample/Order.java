@@ -75,6 +75,7 @@ public class Order {
             for (Ingredient ingredient : pizza.getExtraIngredients()) {
                 stringToReturn += "+" + ingredient.getName();
             }
+            stringToReturn += "\n\t";
         }
 
         stringToReturn += "\n\t";
@@ -83,7 +84,7 @@ public class Order {
             stringToReturn += extra.getName() + ", ";
         }
 
-        stringToReturn += "\n\t Order Done: " + isOrderComplete + "\n";
+        stringToReturn += "\n\tOrder Done: " + isOrderComplete + "\n";
 
         return stringToReturn;
     }
