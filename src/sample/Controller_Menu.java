@@ -17,8 +17,6 @@ import javafx.scene.input.MouseEvent;
  *
  * @author Stefan
  */
-
-
 public class Controller_Menu {
 
     @FXML
@@ -48,7 +46,6 @@ public class Controller_Menu {
     @FXML
     ListView statusOrderListID;
 
-
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
     ObservableList<Extras> extrasObservableList;
@@ -60,29 +57,26 @@ public class Controller_Menu {
     ChefTerminal chefTerminal;
     StatusTerminal statusTerminal;
 
-       @FXML
-       public void initialize() {
-            menu = new Menu();
-            customerTerminal = new CustomerTerminal();
-            chefTerminal = new ChefTerminal("ChefTerminal");
-            statusTerminal = new StatusTerminal();
+    @FXML
+    public void initialize() {
+        menu = new Menu();
+        customerTerminal = new CustomerTerminal();
+        chefTerminal = new ChefTerminal("ChefTerminal");
+        statusTerminal = new StatusTerminal();
 
-            pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
-            ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
-            extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
-            chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
-            shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
-            pizzaListID.setItems(pizzaObservableList);
-            extraListID.setItems(extrasObservableList);
-            orderListID.setItems(shoppingCartObservableList);
-            chefOrderListID.setItems(chefObservableList);
-            statusOrderListID.setItems(shoppingCartObservableList);
+        pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
+        ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
+        extrasObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
+        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
+        pizzaListID.setItems(pizzaObservableList);
+        extraListID.setItems(extrasObservableList);
+        orderListID.setItems(shoppingCartObservableList);
+        chefOrderListID.setItems(chefObservableList);
+        statusOrderListID.setItems(shoppingCartObservableList);
 
-            
-            //REDUNDANT METHOD BELOW
-        }
-
-    
+        //REDUNDANT METHOD BELOW
+    }
 
 //    @FXML
 //    public void handlePickPizza(ActionEvent pickPizza, WindowEvent cTextMenu) {
@@ -94,8 +88,6 @@ public class Controller_Menu {
 //        } else
 //            isAmerican(false);
 //    }
-    
-    
     @FXML
     public void handlePickExtra(ActionEvent pickExtra) {
 
@@ -158,10 +150,19 @@ public class Controller_Menu {
 
     public void handlePickPizza(MouseEvent contextMenuEvent) {
 
-           Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
-           customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
-           shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
-           orderListID.setItems(shoppingCartObservableList);
+        Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
+        customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getPizzasInShoppingCart());
+        orderListID.setItems(shoppingCartObservableList);
+
+    }
+
+    public void handlePickExtra(MouseEvent contextMenuEvent) {
+
+        Extras extrasToAddToOrder = (Extras) extraListID.getSelectionModel().getSelectedItem();
+        customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
+        shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getExtrasInShoppingCart());
+        orderListID.setItems(shoppingCartObservableList);
 
     }
 }
