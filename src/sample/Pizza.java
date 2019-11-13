@@ -6,8 +6,6 @@ import java.util.ArrayList;
 // Written by Tadevos
 public class Pizza extends Product {
 
-    private String name;
-    private double price;
     private int ordernumber;
     private boolean isAmerican;
     private int orderStatus;
@@ -15,8 +13,7 @@ public class Pizza extends Product {
     private ArrayList<Ingredient> extraIngredients;
 
     public Pizza(String name, double price) {
-        this.name = name;
-        this.price = price;
+        super(name, price);
         this.ordernumber = 0;
         this.isAmerican = false;
         this.orderStatus = 0;

@@ -4,12 +4,10 @@ import java.text.DecimalFormat;
 
 public class Extras extends Product {
     // Written by Tadevos
-    private String name;
-    private double price;
+
 
     public Extras(String name, double price) {
-        this.name = name;
-        this.price = price;
+        super(name, price);
     }
 
     public double getPrice() {
