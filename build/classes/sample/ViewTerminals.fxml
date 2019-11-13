@@ -31,8 +31,8 @@
                         <ListView fx:id="pizzaListID" layoutX="7.0" layoutY="95.0" onMouseClicked="#handlePickPizza" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <ListView fx:id="extraListID" layoutX="310.0" layoutY="95.0" onMouseClicked="#handlePickExtra" prefHeight="266.0" prefWidth="283.0" style="-fx-background-color: white;" />
                         <Label alignment="CENTER" layoutX="160.0" layoutY="371.0" prefHeight="23.0" prefWidth="165.0" style="-fx-font-size: 24; -fx-font-family: Gabriola;" text="Varukorg" />
-                        <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" onMouseClicked="#handleCustomerOrderList" prefHeight="195.0" prefWidth="438.0" style="-fx-background-color: white;" />
-                        <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="606.0" mnemonicParsing="false" onAction="#handlePayOrderBtn" onMouseClicked="#handlePayOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
+                        <ListView fx:id="orderListID" layoutX="148.0" layoutY="401.0" prefHeight="195.0" prefWidth="438.0" style="-fx-background-color: white;" />
+                        <Button fx:id="payOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="606.0" mnemonicParsing="false" onAction="#handlePayOrderBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Betala">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -42,7 +42,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="removeItemID" alignment="BOTTOM_CENTER" layoutX="40.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleRemoveBtn" onMouseClicked="#handleRemoveBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort">
+                        <Button fx:id="removeItemID" alignment="BOTTOM_CENTER" layoutX="40.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleRemoveBtn" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -70,7 +70,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
                      <children>
-                        <ListView fx:id="chefOrderListID" layoutX="162.0" layoutY="94.0" onMouseClicked="#handleChefOrderList" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
+                        <ListView fx:id="chefOrderListID" layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
                         <HBox alignment="CENTER" layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
                            <children>
@@ -85,17 +85,17 @@
                         <HBox alignment="CENTER" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
                         <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-                        <Button fx:id="orderInOvenID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleOrderInOvenBtn" onMouseClicked="#handleOrderInOvenBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order i ugnen">
+                        <Button fx:id="orderInOvenID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleOrderInOvenBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order i ugnen">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="takeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleTakeOrderBtn" onMouseClicked="#handleTakeOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta order">
+                        <Button fx:id="takeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleTakeOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta order">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="orderCompleteID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleOrderCompleteBtn" onMouseClicked="#handleOrderCompleteBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order klar">
+                        <Button fx:id="orderCompleteID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleOrderCompleteBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order klar">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -121,13 +121,14 @@
                         <HBox alignment="CENTER" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
                         <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-                        <ListView fx:id="statusOrderListID" layoutX="162.0" layoutY="94.0" onMouseClicked="#handleStatusOrderList" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
-                        <Button fx:id="sendOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleSendOrderBtn" onMouseClicked="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Lämna ut order">
+                        <ListView fx:id="statusOrderListID" layoutX="162.0" layoutY="94.0" prefHeight="534.0" prefWidth="425.0" style="-fx-background-color: white;" />
+                        <Button fx:id="sendOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Lämna ut order">
+
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="removeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleSendOrderBtn" onMouseClicked="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort order">
+                        <Button fx:id="removeOrderID" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleSendOrderBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta bort order">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>

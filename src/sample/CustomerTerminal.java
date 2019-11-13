@@ -83,17 +83,29 @@ public class CustomerTerminal {
     }
 
     public boolean checkOutShoppingCart() {
-        order.setExtrasOrder(extrasInShoppingCart);
-        order.setPizzasInOrder(pizzasInShoppingCart);
-        order.setOrderID(orderID);
+        if(isShoppingCartEmpty()) {
+            return false;
+        } else {
+            order.setExtrasOrder(extrasInShoppingCart);
+            order.setPizzasInOrder(pizzasInShoppingCart);
+            order.setOrderID(orderID);
 
-        if (order.getTotalPriceOfOrder() != 0) {
-            if (CardReader.processPayment()) {
-                // Add call to flush all lists and prepare terminal for next customer.
-                return true;
+            if (order.getTotalPriceOfOrder() != 0) {
+                if (!CardReader.processPayment()) {
+                    // Add call to flush all lists and prepare terminal for next customer.
+                    return false;
+                }
             }
         }
-        return false;
+        return true;
+    }
+
+    public boolean isShoppingCartEmpty() {
+        if(pizzasInShoppingCart.isEmpty() && extrasInShoppingCart.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Menu getMenu() {
