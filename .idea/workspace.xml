@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42c2ddfc-c53a-4fe7-bdb9-79b0d9eec91b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build/classes/sample/ViewTerminals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/sample/ViewTerminals.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/sound/soundOrderComplete.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller_Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ViewTerminals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ViewTerminals.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +41,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johan.lind\Documents\GitHub\GroupTonysPizza\src\sample\sound" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
