@@ -120,15 +120,13 @@ public class Controller_ViewTerminals {
 
     @FXML
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
-<<<<<<< HEAD:src/sample/Controller_ViewTerminals.java
         chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
-        playSoundIfAnyOrdercomplete();
-=======
-        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
-        chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         statusTerminal.playSoundIfAnyOrdercomplete();
->>>>>>> Commiters:src/sample/Controller_Menu.java
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
+        chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
+        statusTerminal.playSoundIfAnyOrdercomplete();
+
         refreshUI();
     }
 
