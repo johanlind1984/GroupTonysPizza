@@ -42,9 +42,6 @@ public class Controller_ChangePizzaWindow {
         ingredientMenu = FXCollections.observableArrayList(menu.getAllIngredientMenu());
         addIngredientsListID.setItems(ingredientMenu);
         changedPizzaListID.setItems(ingredientsOnPizza);
-        System.out.println(pizza.getName());
-        System.out.println(pizza.getIncludedIngredients().size());
-        System.out.println(pizza.getExtraIngredients().size());
     }
 
     public void setPizzaToModify(Pizza incomingPizza) {

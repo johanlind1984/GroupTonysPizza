@@ -189,25 +189,26 @@ public class Controller_Menu {
 
     @FXML
     void handleChangeOrderBtn(MouseEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePizzaWindow.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            
-            stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
-            stage.setTitle("Tony Mozzarella's Pizza");
-            stage.setAlwaysOnTop(true);
-            stage.setScene(new Scene(root1));
+        if(orderListID.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePizzaWindow.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
 
-            Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
-            Pizza selectedPizza = (Pizza) orderListID.getSelectionModel().getSelectedItem();
-            controller.setPizzaToModify(selectedPizza);
+                stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
+                stage.setTitle("Tony Mozzarella's Pizza");
+                stage.setAlwaysOnTop(true);
+                stage.setScene(new Scene(root1));
 
-            stage.show();
-        } catch (IOException e) {
-            Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, e);
+                Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
+                Pizza selectedPizza = (Pizza) orderListID.getSelectionModel().getSelectedItem();
+                controller.setPizzaToModify(selectedPizza);
+
+                stage.show();
+            } catch (IOException e) {
+                Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, e);
+            }
         }
-
 
     }
 
