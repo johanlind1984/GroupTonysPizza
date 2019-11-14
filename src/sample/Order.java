@@ -86,8 +86,10 @@ public class Order {
         for (Extras extra : extrasInCart) {
             stringToReturn += extra.getName() + ", ";
         }
-
-        stringToReturn += "\n\tOrder Done: " + isOrderComplete + "\n";
+        if(isOrderComplete())
+        stringToReturn += "\n\tOrder klar\n";
+        else
+            stringToReturn+= "\n\tOrder förbereds";
 
         return stringToReturn;
     }
