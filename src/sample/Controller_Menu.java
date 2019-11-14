@@ -129,6 +129,7 @@ public class Controller_Menu {
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
         chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
         refreshUI();
     }
 
@@ -185,7 +186,7 @@ public class Controller_Menu {
             Stage stage = new Stage();
             
             stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
-            stage.setTitle("changePizzaWindow");
+            stage.setTitle("Tony Mozzarella's Pizza");
             stage.setAlwaysOnTop(true);
             stage.setScene(new Scene(root1));
             stage.show();

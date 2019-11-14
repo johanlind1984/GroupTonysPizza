@@ -16,6 +16,10 @@ public class Menu {
 
 
     public void createListOfIngredientsAndPizzas(){
+        Ingredient glutenFree=new Ingredient("Glutenfri botten", 10.00);
+        allIngredientMenu.add(glutenFree);
+        Ingredient americanCrust=new Ingredient("Amerikansk botten", 10.00);
+        allIngredientMenu.add(americanCrust);
         Ingredient tomato=new Ingredient ("Tomat", 5.00);
         allIngredientMenu.add(tomato);
         Ingredient cheese=new Ingredient ("Ost", 5.00);
@@ -38,6 +42,9 @@ public class Menu {
         allIngredientMenu.add(shrimp);
 
 
+
+
+        Pizza makeYourOwn=new Pizza("Gör din egen pizza", 70.00);
         Pizza margerita = new Pizza ("Margerita", 70.00);
         margerita.addIngredientIncluded(tomato);
         margerita.addIngredientIncluded(cheese);
