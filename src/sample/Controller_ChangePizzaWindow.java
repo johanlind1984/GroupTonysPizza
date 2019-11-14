@@ -15,8 +15,8 @@ public class Controller_ChangePizzaWindow {
     @FXML
     ListView ingredientsListView;
 
-    ObservableList<Ingredient> ingredientsOnPizza;
-    ObservableList<Ingredient> ingredientMenu;
+    ObservableList<Ingredient> ingredientsOnPizzaObservableList;
+    ObservableList<Ingredient> ingredientMenuObservableList;
     ArrayList<Ingredient> allIngredientsOnPizza;
     Menu menu;
     Pizza pizza;
@@ -33,20 +33,20 @@ public class Controller_ChangePizzaWindow {
     private void refreshUI() {
         ArrayList<Ingredient> allIngredientsOnPizza = new ArrayList<Ingredient>(pizza.getIncludedIngredients());
         allIngredientsOnPizza.addAll(pizza.getExtraIngredients());
-        ingredientsOnPizza = FXCollections.observableArrayList(allIngredientsOnPizza);
-        ingredientMenu = FXCollections.observableArrayList(menu.getAllIngredientMenu());
-        ingredientsListView.setItems(ingredientMenu);
-        ingredientsOnPizzaListView.setItems(ingredientsOnPizza);
+        ingredientsOnPizzaObservableList = FXCollections.observableArrayList(allIngredientsOnPizza);
+        ingredientMenuObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
+        ingredientsListView.setItems(ingredientMenuObservableList);
+        ingredientsOnPizzaListView.setItems(ingredientsOnPizzaObservableList);
     }
 
     public void setPizzaToModify(Pizza incomingPizza) {
         pizza = incomingPizza;
         ArrayList<Ingredient> allIngredientsOnPizza = new ArrayList<Ingredient>(pizza.getIncludedIngredients());
         allIngredientsOnPizza.addAll(pizza.getExtraIngredients());
-        ingredientsOnPizza = FXCollections.observableArrayList(allIngredientsOnPizza);
-        ingredientMenu = FXCollections.observableArrayList(menu.getAllIngredientMenu());
-        ingredientsListView.setItems(ingredientMenu);
-        ingredientsOnPizzaListView.setItems(ingredientsOnPizza);
+        ingredientsOnPizzaObservableList = FXCollections.observableArrayList(allIngredientsOnPizza);
+        ingredientMenuObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
+        ingredientsListView.setItems(ingredientMenuObservableList);
+        ingredientsOnPizzaListView.setItems(ingredientsOnPizzaObservableList);
 
     }
 
