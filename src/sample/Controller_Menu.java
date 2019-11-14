@@ -129,7 +129,6 @@ public class Controller_Menu {
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
         chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
-        chefObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
         refreshUI();
     }
 
