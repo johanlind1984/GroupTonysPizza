@@ -51,7 +51,7 @@ public class Controller_Menu {
     @FXML
     Button customizedPizzaToOrderID;
     @FXML
-    TextField ShoppingCartTotalPriceID;
+    TextField shoppingCartTotalPriceID;
     @FXML
     ListView pizzaListID;
     @FXML
@@ -102,7 +102,8 @@ public class Controller_Menu {
         chefOrderListID.setItems(chefObservableList);
         statusOrderListID.refresh();
         statusOrderListID.setItems(orderObservableList);
-        ShoppingCartTotalPriceID.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
+        shoppingCartTotalPriceID.setStyle("-fx-text-inner-color: back;");
+        shoppingCartTotalPriceID.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
     }
 
     public void prepareCustomerTerminalForNewCustomer() {
@@ -201,6 +202,9 @@ public class Controller_Menu {
             chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
             prepareCustomerTerminalForNewCustomer();
             refreshUI();
+        } else {
+            shoppingCartTotalPriceID.setStyle("-fx-text-inner-color: red;");
+            shoppingCartTotalPriceID.setText("FEL: Ditt köp medges ej, eller tom varukorg");
         }
 
     }
@@ -208,14 +212,14 @@ public class Controller_Menu {
     public void handlePickPizza(MouseEvent contextMenuEvent) {
         Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
-        ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
+        shoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
         refreshUI();
     }
 
     public void handlePickExtra(MouseEvent contextMenuEvent) {
         Extras extrasToAddToOrder = (Extras) extraListID.getSelectionModel().getSelectedItem();
         customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
-        ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
+        shoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
         refreshUI();
     }
 }
