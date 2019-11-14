@@ -37,7 +37,7 @@ public class Order {
 
         boolean isAllPizzaDone = true;
         for (Pizza pizza : pizzasInCart) {
-            if(pizza.getOrderStatus() != 3) {
+            if(!pizza.getOrderStatus().equals(OrderStatus.ORDER_IS_COMPLETE)) {
                 isAllPizzaDone = false;
             }
         }
@@ -70,13 +70,13 @@ public class Order {
     }
 
     private String getStringForOrderStatusPizza(Pizza pizza) {
-        if(pizza.getOrderStatus() == 0) {
+        if(pizza.getOrderStatus().equals(OrderStatus.ORDER_NOT_TAKEN)) {
             return "Pizzan väntar på bagare";
-        } else if(pizza.getOrderStatus() == 1) {
+        } else if(pizza.getOrderStatus().equals(OrderStatus.ORDER_IS_PREPARING_FOR_OVEN)) {
             return "Pizzan förbereds för ugnen";
-        } else if(pizza.getOrderStatus() == 2) {
+        } else if(pizza.getOrderStatus().equals(OrderStatus.ORDER_IS_IN_OVEN)) {
             return "Pizzan är i ugnen";
-        } else if(pizza.getOrderStatus() == 3) {
+        } else if(pizza.getOrderStatus().equals(OrderStatus.ORDER_IS_COMPLETE)) {
             return "Pizzan är klar";
         } else {
             return "-1";

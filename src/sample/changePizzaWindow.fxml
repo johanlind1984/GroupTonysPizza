@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_ChangePizzaWindow">
    <children>
       <HBox prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
       <HBox layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
@@ -19,11 +19,8 @@
             </Label>
          </children></HBox>
       <HBox layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-      <ListView fx:id="addIngredientsListID" layoutX="79.0" layoutY="80.0" prefHeight="235.0" prefWidth="462.0" />
-      <Button fx:id="addIngredientsToPizzaID" layoutX="230.0" layoutY="324.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-font-size: 16;" text="Lägg till på pizza" />
-      <ListView fx:id="changedPizzaListID" layoutX="79.0" layoutY="371.0" prefHeight="200.0" prefWidth="462.0" />
-      <Button fx:id="backToMainID" layoutX="162.0" layoutY="598.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-font-size: 16;" text="Tillbaka" />
-      <Button fx:id="customizedPizzaToOrderID" layoutX="367.0" layoutY="598.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-font-size: 16;" text="Färdig" />
+      <ListView fx:id="addIngredientsListID" layoutX="79.0" layoutY="80.0" prefHeight="235.0" prefWidth="462.0" onMouseClicked="#addIngredientToPizza"/>
+      <ListView fx:id="changedPizzaListID" layoutX="79.0" layoutY="371.0" prefHeight="200.0" prefWidth="462.0" onMouseClicked="#removeIngredientToPizza"/>
       <HBox layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
       <HBox layoutX="200.0" layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
       <HBox layoutX="400.0" layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
