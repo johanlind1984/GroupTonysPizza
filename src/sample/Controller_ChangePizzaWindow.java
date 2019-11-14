@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 
@@ -12,27 +11,23 @@ import java.util.ArrayList;
 
 public class Controller_ChangePizzaWindow {
     @FXML
-    Button addIngredientsToPizzaID;
+    ListView ingredientsOnPizzaListView;
     @FXML
-    Button backToMainID;
-    @FXML
-    Button customizedPizzaToOrderID;
-    @FXML
-    ListView addIngredientsListID;
-    @FXML
-    ListView changedPizzaListID;
+    ListView ingredientsListView;
 
     ObservableList<Ingredient> ingredientsOnPizza;
     ObservableList<Ingredient> ingredientMenu;
+    ArrayList<Ingredient> allIngredientsOnPizza;
     Menu menu;
     Pizza pizza;
-    ArrayList<Ingredient> allIngredientsOnPizza;
+
 
     @FXML
     public void initialize() {
+        allIngredientsOnPizza = new ArrayList<Ingredient>();
         menu = new Menu();
         pizza = new Pizza("", 0);
-        allIngredientsOnPizza = new ArrayList<Ingredient>();
+
     }
 
     private void refreshUI() {
@@ -40,11 +35,8 @@ public class Controller_ChangePizzaWindow {
         allIngredientsOnPizza.addAll(pizza.getExtraIngredients());
         ingredientsOnPizza = FXCollections.observableArrayList(allIngredientsOnPizza);
         ingredientMenu = FXCollections.observableArrayList(menu.getAllIngredientMenu());
-        addIngredientsListID.setItems(ingredientMenu);
-        changedPizzaListID.setItems(ingredientsOnPizza);
-        System.out.println(pizza.getName());
-        System.out.println(pizza.getIncludedIngredients().size());
-        System.out.println(pizza.getExtraIngredients().size());
+        ingredientsListView.setItems(ingredientMenu);
+        ingredientsOnPizzaListView.setItems(ingredientsOnPizza);
     }
 
     public void setPizzaToModify(Pizza incomingPizza) {
@@ -53,18 +45,18 @@ public class Controller_ChangePizzaWindow {
         allIngredientsOnPizza.addAll(pizza.getExtraIngredients());
         ingredientsOnPizza = FXCollections.observableArrayList(allIngredientsOnPizza);
         ingredientMenu = FXCollections.observableArrayList(menu.getAllIngredientMenu());
-        addIngredientsListID.setItems(ingredientMenu);
-        changedPizzaListID.setItems(ingredientsOnPizza);
+        ingredientsListView.setItems(ingredientMenu);
+        ingredientsOnPizzaListView.setItems(ingredientsOnPizza);
 
     }
 
     public void addIngredientToPizza(MouseEvent event) {
-        pizza.addIngredientExtra((Ingredient) addIngredientsListID.getSelectionModel().getSelectedItem());
+        pizza.addIngredientExtra((Ingredient) ingredientsListView.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
     public void removeIngredientToPizza(MouseEvent event) {
-        pizza.removeIngredient((Ingredient) changedPizzaListID.getSelectionModel().getSelectedItem());
+        pizza.removeIngredient((Ingredient) ingredientsOnPizzaListView.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
