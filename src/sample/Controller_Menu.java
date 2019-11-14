@@ -5,6 +5,7 @@
  */
 package sample;
 
+import java.io.File;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +22,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
@@ -51,7 +56,7 @@ public class Controller_Menu {
     @FXML
     Button customizedPizzaToOrderID;
     @FXML
-    TextField ShoppingCartTotalPriceID;
+    TextField shoppingCartTotalPriceID;
     @FXML
     ListView pizzaListID;
     @FXML
@@ -89,6 +94,7 @@ public class Controller_Menu {
     }
 
     public void refreshUI() {
+        playSoundIfAnyOrdercomplete();
         statusTerminal.checkIfAnyOrderIsComplete();
         pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
         ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
@@ -102,12 +108,28 @@ public class Controller_Menu {
         chefOrderListID.setItems(chefObservableList);
         statusOrderListID.refresh();
         statusOrderListID.setItems(orderObservableList);
-        ShoppingCartTotalPriceID.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
+        shoppingCartTotalPriceID.setStyle("-fx-text-inner-color: back;");
+        shoppingCartTotalPriceID.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
     }
 
     public void prepareCustomerTerminalForNewCustomer() {
         customerTerminal.clearShoppingCartsAndOrder();
         refreshUI();
+    }
+
+    private void playSoundIfAnyOrdercomplete() {
+        if(statusTerminal.checkIfAnyOrderIsComplete()) {
+            try
+            {
+                Clip clip = AudioSystem.getClip();
+                clip.open(AudioSystem.getAudioInputStream(new File("C:\\Users\\johan.lind\\Documents\\GitHub\\GroupTonysPizza\\src\\sample\\sound\\yababy.wav")));
+                clip.start();
+            }
+            catch (Exception exc)
+            {
+                exc.printStackTrace(System.out);
+            }
+        }
     }
 
     @FXML
@@ -201,6 +223,9 @@ public class Controller_Menu {
             chefTerminal.addListOfPizzasToQueue(customerTerminal.getPizzasInShoppingCart());
             prepareCustomerTerminalForNewCustomer();
             refreshUI();
+        } else {
+            shoppingCartTotalPriceID.setStyle("-fx-text-inner-color: red;");
+            shoppingCartTotalPriceID.setText("FEL: Ditt köp medges ej, eller tom varukorg");
         }
 
     }
@@ -208,14 +233,14 @@ public class Controller_Menu {
     public void handlePickPizza(MouseEvent contextMenuEvent) {
         Pizza pizzaToAddToOrder = (Pizza) pizzaListID.getSelectionModel().getSelectedItem();
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
-        ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
+        shoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
         refreshUI();
     }
 
     public void handlePickExtra(MouseEvent contextMenuEvent) {
         Extras extrasToAddToOrder = (Extras) extraListID.getSelectionModel().getSelectedItem();
         customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
-        ShoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
+        shoppingCartTotalPriceID.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
         refreshUI();
     }
 }
