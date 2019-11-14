@@ -41,10 +41,22 @@ public class CustomerTerminal {
         return false;
     }
 
+    private Pizza createUniqueCopyOfPizza(Pizza pizzaToMakeCopyOf) {
+        Pizza copyOfPizza = new Pizza(pizzaToMakeCopyOf.getName(), pizzaToMakeCopyOf.getPrice());
+
+        for (Ingredient ingredient : pizzaToMakeCopyOf.getIncludedIngredients()) {
+            copyOfPizza.addIngredientIncluded(ingredient);
+        }
+
+        for (Ingredient ingredient : pizzaToMakeCopyOf.getExtraIngredients()) {
+            copyOfPizza.addIngredientIncluded(ingredient);
+        }
+
+        return copyOfPizza;
+    }
+
     public void addPizzaToShoppingCart(Pizza pizzaToAddToCart) {
-        Pizza copyOfPizzaToAdd = new Pizza(pizzaToAddToCart.getName(), pizzaToAddToCart.getPrice());
-        copyOfPizzaToAdd.setIncludedIngredients(pizzaToAddToCart.getIncludedIngredients());
-        copyOfPizzaToAdd.setExtraIngredients(pizzaToAddToCart.getExtraIngredients());
+        Pizza copyOfPizzaToAdd = createUniqueCopyOfPizza(pizzaToAddToCart);
         pizzasInShoppingCart.add(copyOfPizzaToAdd);
     }
 

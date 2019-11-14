@@ -207,6 +207,8 @@ public class Controller_Menu {
         } catch (IOException e) {
             Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, e);
         }
+
+        refreshUI();
     }
 
     @FXML
