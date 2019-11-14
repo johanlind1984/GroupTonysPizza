@@ -72,6 +72,14 @@ public class Pizza extends Product {
         return orderStatus;
     }
 
+    public void setIncludedIngredients(ArrayList<Ingredient> includedIngredients) {
+        this.includedIngredients = includedIngredients;
+    }
+
+    public void setExtraIngredients(ArrayList<Ingredient> extraIngredients) {
+        this.extraIngredients = extraIngredients;
+    }
+
     public void setAmerican(boolean american) {
         isAmerican = american;
     }

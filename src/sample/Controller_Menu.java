@@ -48,12 +48,6 @@ public class Controller_Menu {
     @FXML
     Button orderCompleteID;
     @FXML
-    Button addIngredientsToPizzaID;
-    @FXML
-    Button backToMainID;
-    @FXML
-    Button customizedPizzaToOrderID;
-    @FXML
     TextField shoppingCartTotalPriceID;
     @FXML
     ListView pizzaListID;
@@ -65,10 +59,6 @@ public class Controller_Menu {
     ListView chefOrderListID;
     @FXML
     ListView statusOrderListID;
-    @FXML 
-    ListView addIngredientsListID;
-    @FXML
-    ListView changedPizzaListID;
 
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
@@ -208,6 +198,11 @@ public class Controller_Menu {
             stage.setTitle("Tony Mozzarella's Pizza");
             stage.setAlwaysOnTop(true);
             stage.setScene(new Scene(root1));
+
+            Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
+            Pizza selectedPizza = (Pizza) orderListID.getSelectionModel().getSelectedItem();
+            controller.setPizzaToModify(selectedPizza);
+
             stage.show();
         } catch (IOException e) {
             Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, e);

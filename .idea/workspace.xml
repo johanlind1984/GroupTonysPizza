@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42c2ddfc-c53a-4fe7-bdb9-79b0d9eec91b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller_ChangePizzaWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ChefTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChefTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller_Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CustomerTerminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/changePizzaWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/changePizzaWindow.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -108,6 +108,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller_ChangePizzaWindow.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>

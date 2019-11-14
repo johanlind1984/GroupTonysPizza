@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_ChangePizzaWindow">
    <children>
       <HBox prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
       <HBox layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
