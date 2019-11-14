@@ -5,7 +5,7 @@
  */
 package sample;
 
-import java.io.File;
+
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,8 +22,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 
 /**
  *
@@ -104,20 +102,6 @@ public class Controller_ViewTerminals {
         refreshUI();
     }
 
-    private void playSoundIfAnyOrdercomplete() {
-        if(statusTerminal.checkIfAnyOrderIsComplete()) {
-            try
-            {
-                Clip clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(new File("src\\sample\\sound\\yababy.wav")));
-                clip.start();
-            }
-            catch (Exception exc)
-            {
-                exc.printStackTrace(System.out);
-            }
-        }
-    }
 
     @FXML
     public void handleCustomerOrderList(ActionEvent orderList) {
@@ -136,9 +120,15 @@ public class Controller_ViewTerminals {
 
     @FXML
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
+<<<<<<< HEAD:src/sample/Controller_ViewTerminals.java
         chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         playSoundIfAnyOrdercomplete();
+=======
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        statusTerminal.playSoundIfAnyOrdercomplete();
+>>>>>>> Commiters:src/sample/Controller_Menu.java
         refreshUI();
     }
 
