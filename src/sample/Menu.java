@@ -2,6 +2,7 @@ package sample;
 import java.util.ArrayList;
 
 public class Menu {
+
     private ArrayList<Pizza>allPizzaMenu;
     private ArrayList<Ingredient>allIngredientMenu;
     private ArrayList<Extras>allExtrasMenu;

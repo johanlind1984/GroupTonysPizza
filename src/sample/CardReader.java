@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class CardReader {
 
-    // Written by Johanna
     static boolean processPayment (){
 
         Random random = new Random();

@@ -4,8 +4,6 @@ import java.util.Random;
 
 public class CustomerTerminal {
 
-    //* AUTHOR: JOHAN LIND* //
-
     private final Menu menu;
     private Order order;
     private int orderID;

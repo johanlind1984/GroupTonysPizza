@@ -3,8 +3,6 @@ package sample;
 import java.text.DecimalFormat;
 
 public class Extras extends Product {
-    // Written by Tadevos
-
 
     public Extras(String name, double price) {
         super(name, price);

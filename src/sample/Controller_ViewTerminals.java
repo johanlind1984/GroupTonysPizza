@@ -25,10 +25,6 @@ import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Stefan
- */
 public class Controller_ViewTerminals {
 
     @FXML
@@ -88,19 +84,24 @@ public class Controller_ViewTerminals {
 
     public void refreshUI() {
         statusTerminal.checkIfAnyOrderIsComplete();
+
         pizzaMenuObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
         ingredientMenuObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
         extrasMenuObservableList = FXCollections.observableArrayList(menu.getAllExtrasMenu());
         chefTerminalObservableList = FXCollections.observableArrayList(chefTerminal.getPizzasToBakeQueue());
         shoppingCartObservableList = FXCollections.observableArrayList(customerTerminal.getShoppingCart());
         statusTerminalObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
+
+        statusOrderListView.refresh();
+        chefOrderListView.refresh();
+        shoppingCartListView.refresh();
+
         pizzaMenuListView.setItems(pizzaMenuObservableList);
         extraMenuListView.setItems(extrasMenuObservableList);
-        shoppingCartListView.refresh();
         shoppingCartListView.setItems(shoppingCartObservableList);
         chefOrderListView.setItems(chefTerminalObservableList);
-        statusOrderListView.refresh();
         statusOrderListView.setItems(statusTerminalObservableList);
+
         shoppingCartTotalPriceTextField.setStyle("-fx-text-inner-color: back;");
         shoppingCartTotalPriceTextField.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
     }
@@ -118,7 +119,6 @@ public class Controller_ViewTerminals {
         chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         statusTerminal.playSoundIfAnyOrdercomplete();
-
         refreshUI();
     }
 
