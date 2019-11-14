@@ -103,12 +103,19 @@ public class Order {
         for (Extras extra : extrasInCart) {
             stringToReturn += extra.getName() + ", ";
         }
+<<<<<<< HEAD
 
         if(isOrderComplete) {
             stringToReturn += "\n\tOrder Redo för utlämning";
         } else {
             stringToReturn += "\n\tOrder inte klar";
         }
+=======
+        if(isOrderComplete())
+        stringToReturn += "\n\tOrder klar\n";
+        else
+            stringToReturn+= "\n\tOrder förbereds";
+>>>>>>> Commiters
 
         return stringToReturn;
     }
