@@ -69,7 +69,7 @@ public class Order {
         extrasInCart = extras;
     }
 
-    private String getStringForOrderStatus(Pizza pizza) {
+    private String getStringForOrderStatusPizza(Pizza pizza) {
         if(pizza.getOrderStatus() == 0) {
             return "Pizzan väntar på bagare";
         } else if(pizza.getOrderStatus() == 1) {
@@ -83,13 +83,20 @@ public class Order {
         }
     }
 
+    private String getStringForOrderStatusOrder() {
+        if(isOrderComplete())
+            return  "\n\tOrder klar\n";
+        else
+            return  "\n\tOrder förbereds";
+    }
+
     @Override
     public String toString() {
         String stringToReturn = orderID + "\n\t";
 
         for (Pizza pizza : pizzasInCart) {
 
-            String orderStatusString = " | " + getStringForOrderStatus(pizza);
+            String orderStatusString = " | " + getStringForOrderStatusPizza(pizza);
             stringToReturn += pizza.getName() + " " + orderStatusString + "\n\tExtras Ingredienser:";
 
             for (Ingredient ingredient : pizza.getExtraIngredients()) {
@@ -103,19 +110,9 @@ public class Order {
         for (Extras extra : extrasInCart) {
             stringToReturn += extra.getName() + ", ";
         }
-<<<<<<< HEAD
 
-        if(isOrderComplete) {
-            stringToReturn += "\n\tOrder Redo för utlämning";
-        } else {
-            stringToReturn += "\n\tOrder inte klar";
-        }
-=======
-        if(isOrderComplete())
-        stringToReturn += "\n\tOrder klar\n";
-        else
-            stringToReturn+= "\n\tOrder förbereds";
->>>>>>> Commiters
+        stringToReturn += getStringForOrderStatusOrder();
+
 
         return stringToReturn;
     }
