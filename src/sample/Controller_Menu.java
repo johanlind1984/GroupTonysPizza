@@ -94,7 +94,6 @@ public class Controller_Menu {
     }
 
     public void refreshUI() {
-        playSoundIfAnyOrdercomplete();
         statusTerminal.checkIfAnyOrderIsComplete();
         pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
         ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
@@ -151,6 +150,7 @@ public class Controller_Menu {
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
         chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        playSoundIfAnyOrdercomplete();
         refreshUI();
     }
 
