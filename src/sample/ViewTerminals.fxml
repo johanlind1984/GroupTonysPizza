@@ -61,7 +61,7 @@
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-                        <TextField fx:id="ShoppingCartTotalPriceID" alignment="CENTER_RIGHT" layoutX="148.0" layoutY="607.0" prefHeight="36.0" prefWidth="438.0" promptText="Det totala priset" />
+                        <TextField fx:id="shoppingCartTotalPriceID" alignment="CENTER_RIGHT" layoutX="148.0" layoutY="607.0" prefHeight="36.0" prefWidth="438.0" promptText="Det totala priset" />
                      </children>
                   </AnchorPane>
             </content>
