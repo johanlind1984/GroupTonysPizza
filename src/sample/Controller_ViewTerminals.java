@@ -96,6 +96,7 @@ public class Controller_ViewTerminals {
         statusTerminalObservableList = FXCollections.observableArrayList(statusTerminal.getOrders());
         pizzaMenuListView.setItems(pizzaMenuObservableList);
         extraMenuListView.setItems(extrasMenuObservableList);
+        shoppingCartListView.refresh();
         shoppingCartListView.setItems(shoppingCartObservableList);
         chefOrderListView.setItems(chefTerminalObservableList);
         statusOrderListView.refresh();
@@ -109,24 +110,8 @@ public class Controller_ViewTerminals {
         refreshUI();
     }
 
-
     @FXML
-    public void handleCustomerOrderList(ActionEvent orderList) {
-
-    }
-
-    @FXML
-    public void handleChefOrderList(ActionEvent chefOrderList) {
-
-    }
-
-    @FXML
-    public void handleStatusOrderList(ActionEvent statusOrderList) {
-
-    }
-
-    @FXML
-    public void handleOrderCompleteBtn(ActionEvent orderComplete) {
+    public void handlePizzaCompleteBtn(ActionEvent orderComplete) {
         chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         statusTerminal.playSoundIfAnyOrdercomplete();
@@ -138,13 +123,13 @@ public class Controller_ViewTerminals {
     }
 
     @FXML
-    public void handleOrderInOvenBtn(ActionEvent orderInOven) {
+    public void handlePizzaInOvenBtn(ActionEvent orderInOven) {
         chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_IN_OVEN, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
     @FXML
-    public void handleTakeOrderBtn(ActionEvent takeOrder) {
+    public void handleTakePizzaBtn(ActionEvent takeOrder) {
         chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_PREPARING_FOR_OVEN, (Pizza) chefOrderListView.getSelectionModel().getSelectedItem());
         refreshUI();
     }
@@ -170,7 +155,7 @@ public class Controller_ViewTerminals {
     }
 
     @FXML
-    public void handleRemoveBtn(ActionEvent removeItem) {
+    public void handleRemoveFromShoppingCartBtn(ActionEvent removeItem) {
         String classSelected = shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString();
 
         if(shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
@@ -198,6 +183,7 @@ public class Controller_ViewTerminals {
                 Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
                 Pizza selectedPizza = (Pizza) shoppingCartListView.getSelectionModel().getSelectedItem();
                 controller.setPizzaToModify(selectedPizza);
+                controller.setViewTerminalsController(this);
 
                 stage.show();
             } catch (IOException e) {
