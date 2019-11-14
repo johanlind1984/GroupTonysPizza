@@ -1,4 +1,6 @@
 package sample;
+
+import java.awt.*;
 import java.util.ArrayList;
 
 public class StatusTerminal {
@@ -24,6 +26,12 @@ public class StatusTerminal {
 
         return false;
     }
+    public void playSoundIfAnyOrdercomplete() {
+        if(checkIfAnyOrderIsComplete()) {
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }
+
 
     public void completeOrder(Order orderToComplete) {
         orders.remove(orderToComplete);
