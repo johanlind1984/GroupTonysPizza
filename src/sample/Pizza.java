@@ -25,6 +25,7 @@ public class Pizza extends Product {
         includedIngredients.add(ingredientToAdd);
     }
     public void addIngredientExtra(Ingredient ingredientToAdd) {
+        price += ingredientToAdd.getPrice();
         extraIngredients.add(ingredientToAdd);
     }
 
