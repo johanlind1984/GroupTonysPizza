@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import java.util.logging.Level;
@@ -21,6 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -48,6 +50,8 @@ public class Controller_ViewTerminals {
     @FXML
     TextField shoppingCartTotalPriceTextField;
     @FXML
+    Tab terminalIDTab;
+    @FXML
     ListView pizzaMenuListView;
     @FXML
     ListView extraMenuListView;
@@ -57,6 +61,7 @@ public class Controller_ViewTerminals {
     ListView chefOrderListView;
     @FXML
     ListView statusOrderListView;
+
 
     ObservableList<Pizza> pizzaMenuObservableList;
     ObservableList<Ingredient> ingredientMenuObservableList;
@@ -77,6 +82,8 @@ public class Controller_ViewTerminals {
         chefTerminal = new ChefTerminal("ChefTerminal");
         statusTerminal = new StatusTerminal();
         refreshUI();
+        customerTerminal.setTerminalID();
+        terminalIDTab.setText("Customer Terminal " + customerTerminal.getTerminalID());
     }
 
     public void refreshUI() {
@@ -211,7 +218,6 @@ public class Controller_ViewTerminals {
             shoppingCartTotalPriceTextField.setStyle("-fx-text-inner-color: red;");
             shoppingCartTotalPriceTextField.setText("FEL: Ditt köp medges ej, eller tom varukorg");
         }
-
     }
 
     public void handlePickPizza(MouseEvent contextMenuEvent) {

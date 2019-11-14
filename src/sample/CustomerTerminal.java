@@ -1,5 +1,6 @@
 package sample;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CustomerTerminal {
 
@@ -8,11 +9,13 @@ public class CustomerTerminal {
     private final Menu menu;
     private Order order;
     private int orderID;
+    int terminalID;
     private int totalPriceOfShoppingCart;
     private ArrayList<Pizza> pizzasInShoppingCart;
     private ArrayList<Extras> extrasInShoppingCart;
 
     public CustomerTerminal() {
+        terminalID = 1;
         menu = new Menu();
         orderID = 1;
         order = new Order();
@@ -123,6 +126,15 @@ public class CustomerTerminal {
         }
     }
 
+    public void setTerminalID() {
+        Random random = new Random();
+        terminalID = random.nextInt(4)+1;
+    }
+
+    public int getTerminalID() {
+        return terminalID;
+    }
+
     public Menu getMenu() {
         return menu;
     }
@@ -155,6 +167,8 @@ public class CustomerTerminal {
         return listToReturn;
 
     }
+
+
 
     public void clearShoppingCartsAndOrder() {
         order = new Order();
