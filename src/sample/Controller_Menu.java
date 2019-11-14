@@ -22,8 +22,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -50,12 +48,6 @@ public class Controller_Menu {
     @FXML
     Button orderCompleteID;
     @FXML
-    Button addIngredientsToPizzaID;
-    @FXML
-    Button backToMainID;
-    @FXML
-    Button customizedPizzaToOrderID;
-    @FXML
     TextField shoppingCartTotalPriceID;
     @FXML
     ListView pizzaListID;
@@ -67,10 +59,6 @@ public class Controller_Menu {
     ListView chefOrderListID;
     @FXML
     ListView statusOrderListID;
-    @FXML 
-    ListView addIngredientsListID;
-    @FXML
-    ListView changedPizzaListID;
 
     ObservableList<Pizza> pizzaObservableList;
     ObservableList<Ingredient> ingredientObservableList;
@@ -94,7 +82,6 @@ public class Controller_Menu {
     }
 
     public void refreshUI() {
-        playSoundIfAnyOrdercomplete();
         statusTerminal.checkIfAnyOrderIsComplete();
         pizzaObservableList = FXCollections.observableArrayList(menu.getAllPizzaMenu());
         ingredientObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
@@ -149,20 +136,21 @@ public class Controller_Menu {
 
     @FXML
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
-        chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        playSoundIfAnyOrdercomplete();
         refreshUI();
     }
 
     @FXML
     public void handleOrderInOvenBtn(ActionEvent orderInOven) {
-        chefTerminal.setOrderStatus(2, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_IN_OVEN, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
     @FXML
     public void handleTakeOrderBtn(ActionEvent takeOrder) {
-        chefTerminal.setOrderStatus(1, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_PREPARING_FOR_OVEN, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
@@ -210,10 +198,17 @@ public class Controller_Menu {
             stage.setTitle("Tony Mozzarella's Pizza");
             stage.setAlwaysOnTop(true);
             stage.setScene(new Scene(root1));
+
+            Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
+            Pizza selectedPizza = (Pizza) orderListID.getSelectionModel().getSelectedItem();
+            controller.setPizzaToModify(selectedPizza);
+
             stage.show();
         } catch (IOException e) {
             Logger.getLogger(Controller_Menu.class.getName()).log(Level.SEVERE, null, e);
         }
+
+        refreshUI();
     }
 
     @FXML
