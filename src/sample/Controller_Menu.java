@@ -122,7 +122,7 @@ public class Controller_Menu {
             try
             {
                 Clip clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(new File("C:\\Users\\johan.lind\\Documents\\GitHub\\GroupTonysPizza\\src\\sample\\sound\\yababy.wav")));
+                clip.open(AudioSystem.getAudioInputStream(new File("src\\sample\\sound\\yababy.wav")));
                 clip.start();
             }
             catch (Exception exc)
