@@ -185,7 +185,7 @@ public class Controller_Menu {
             Stage stage = new Stage();
             
             stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
-            stage.setTitle("changePizzaWindow");
+            stage.setTitle("Tony Mozzarella's Pizza");
             stage.setAlwaysOnTop(true);
             stage.setScene(new Scene(root1));
             stage.show();
