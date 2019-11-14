@@ -19,7 +19,7 @@ import javafx.stage.Stage;
  *
  * @author Stefan
  */
-public class TonyMozzarellaFX extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -34,7 +34,7 @@ public class TonyMozzarellaFX extends Application {
         stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
         stage.show();
     }  catch (IOException ex){
-        Logger.getLogger(TonyMozzarellaFX.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
 

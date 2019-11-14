@@ -102,7 +102,7 @@ public class Controller_ViewTerminals {
         chefOrderListView.setItems(chefTerminalObservableList);
         statusOrderListView.setItems(statusTerminalObservableList);
 
-        shoppingCartTotalPriceTextField.setStyle("-fx-text-inner-color: back;");
+        shoppingCartTotalPriceTextField.setStyle("-fx-text-inner-color: black;");
         shoppingCartTotalPriceTextField.setText("" + customerTerminal.getTotalPriceOfShoppingCart());
     }
 

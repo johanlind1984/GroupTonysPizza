@@ -13,6 +13,6 @@
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="TonyMozzarellaFX" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="sample.TonyMozzarellaFX"  name="TonyMozzarellaFX" />
+  <jfx:javafx-desc width="800" height="600" main-class="sample.Main" name="TonyMozzarellaFX" />
   <update check="always"/>
 </jnlp>
