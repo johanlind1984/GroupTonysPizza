@@ -22,14 +22,9 @@ public class ChefTerminal {
 
     public void addListOfPizzasToQueue(ArrayList<Pizza> newOrderOfPizzas) {
         queueOfPizzasToBake.addAll(newOrderOfPizzas);
-
-//        for (Pizza pizza : newOrderOfPizzas) {
-//            queueOfPizzasToBake.add(pizza);
-//        }
     }
 
     public boolean removePizzaFromBakeQueue(Pizza pizzaToRemove) {
-        // TESTED
         if(queueOfPizzasToBake.contains(pizzaToRemove)) {
             queueOfPizzasToBake.remove(pizzaToRemove);
             return true;
@@ -38,10 +33,10 @@ public class ChefTerminal {
         return false;
     }
 
-    public void setOrderStatus(int orderStatus, Pizza pizzaToChangeStatus) {
+    public void setOrderStatus(OrderStatus status, Pizza pizzaToChangeStatus) {
         for (Pizza pizza : queueOfPizzasToBake) {
             if(pizza.equals(pizzaToChangeStatus)) {
-                pizza.setOrderStatus(orderStatus);
+                pizza.setOrderStatus(status);
             }
         }
     }

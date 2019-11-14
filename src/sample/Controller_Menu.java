@@ -22,8 +22,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -148,7 +146,7 @@ public class Controller_Menu {
 
     @FXML
     public void handleOrderCompleteBtn(ActionEvent orderComplete) {
-        chefTerminal.setOrderStatus(3, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_COMPLETE, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         chefTerminal.removePizzaFromBakeQueue((Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         playSoundIfAnyOrdercomplete();
         refreshUI();
@@ -156,13 +154,13 @@ public class Controller_Menu {
 
     @FXML
     public void handleOrderInOvenBtn(ActionEvent orderInOven) {
-        chefTerminal.setOrderStatus(2, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_IN_OVEN, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
     @FXML
     public void handleTakeOrderBtn(ActionEvent takeOrder) {
-        chefTerminal.setOrderStatus(1, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
+        chefTerminal.setOrderStatus(OrderStatus.ORDER_IS_PREPARING_FOR_OVEN, (Pizza) chefOrderListID.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 

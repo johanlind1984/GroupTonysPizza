@@ -8,7 +8,7 @@ public class Pizza extends Product {
 
     private int ordernumber;
     private boolean isAmerican;
-    private int orderStatus;
+    private OrderStatus orderStatus;
     private ArrayList<Ingredient> includedIngredients;
     private ArrayList<Ingredient> extraIngredients;
 
@@ -16,7 +16,7 @@ public class Pizza extends Product {
         super(name, price);
         this.ordernumber = 0;
         this.isAmerican = false;
-        this.orderStatus = 0;
+        this.orderStatus = OrderStatus.ORDER_NOT_TAKEN;
         this.includedIngredients = new ArrayList<>();
         this.extraIngredients = new ArrayList<>();
     }
@@ -68,7 +68,7 @@ public class Pizza extends Product {
         return isAmerican;
     }
 
-    public int getOrderStatus() {
+    public OrderStatus getOrderStatus() {
         return orderStatus;
     }
 
@@ -76,7 +76,7 @@ public class Pizza extends Product {
         isAmerican = american;
     }
 
-    public void setOrderStatus(int orderStatusToSet) {
+    public void setOrderStatus(OrderStatus orderStatusToSet) {
         orderStatus = orderStatusToSet;
     }
 
