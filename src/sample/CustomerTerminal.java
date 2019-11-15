@@ -108,7 +108,6 @@ public class CustomerTerminal {
 
             if (order.getTotalPriceOfOrder() != 0) {
                 if (!CardReader.processPayment()) {
-                    // Add call to flush all lists and prepare terminal for next customer.
                     return false;
                 }
             }
