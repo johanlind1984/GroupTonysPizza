@@ -4,12 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 
 public class Controller_ChangePizzaWindow {
+
     @FXML
     ListView ingredientsOnPizzaListView;
     @FXML
@@ -18,6 +20,7 @@ public class Controller_ChangePizzaWindow {
     ObservableList<Ingredient> ingredientsOnPizzaObservableList;
     ObservableList<Ingredient> ingredientMenuObservableList;
     ArrayList<Ingredient> allIngredientsOnPizza;
+    Controller_ViewTerminals viewTerminalsController;
     Menu menu;
     Pizza pizza;
 
@@ -37,6 +40,7 @@ public class Controller_ChangePizzaWindow {
         ingredientMenuObservableList = FXCollections.observableArrayList(menu.getAllIngredientMenu());
         ingredientsListView.setItems(ingredientMenuObservableList);
         ingredientsOnPizzaListView.setItems(ingredientsOnPizzaObservableList);
+        viewTerminalsController.refreshUI();
     }
 
     public void setPizzaToModify(Pizza incomingPizza) {
@@ -55,12 +59,12 @@ public class Controller_ChangePizzaWindow {
         refreshUI();
     }
 
-    public void removeIngredientToPizza(MouseEvent event) {
+    public void removeIngredientFromPizza(MouseEvent event) {
         pizza.removeIngredient((Ingredient) ingredientsOnPizzaListView.getSelectionModel().getSelectedItem());
         refreshUI();
     }
 
-    public void closeWindow(ActionEvent event) {
-
+    public void setViewTerminalsController(Controller_ViewTerminals viewTerminalsController) {
+        this.viewTerminalsController = viewTerminalsController;
     }
 }

@@ -1,18 +1,19 @@
 package sample;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CustomerTerminal {
-
-    //* AUTHOR: JOHAN LIND* //
 
     private final Menu menu;
     private Order order;
     private int orderID;
+    int terminalID;
     private int totalPriceOfShoppingCart;
     private ArrayList<Pizza> pizzasInShoppingCart;
-    private ArrayList<Extras> extrasInShoppingCart;
+    private ArrayList<Extra> extrasInShoppingCart;
 
     public CustomerTerminal() {
+        terminalID = 1;
         menu = new Menu();
         orderID = 1;
         order = new Order();
@@ -68,11 +69,11 @@ public class CustomerTerminal {
         return false;
     }
 
-    public void addExtraToShoppingCart(Extras extraToAddToCart) {
+    public void addExtraToShoppingCart(Extra extraToAddToCart) {
         extrasInShoppingCart.add(extraToAddToCart);
     }
 
-    public boolean removeExtraFromCart(Extras extraRemoveFromCart) {
+    public boolean removeExtraFromCart(Extra extraRemoveFromCart) {
         if(extrasInShoppingCart.contains(extraRemoveFromCart)) {
             extrasInShoppingCart.remove(extraRemoveFromCart);
             return true;
@@ -90,7 +91,7 @@ public class CustomerTerminal {
             }
         }
 
-        for (Extras extra : extrasInShoppingCart) {
+        for (Extra extra : extrasInShoppingCart) {
             priceToReturn += extra.getPrice();
         }
 
@@ -123,6 +124,15 @@ public class CustomerTerminal {
         }
     }
 
+    public void setTerminalID() {
+        Random random = new Random();
+        terminalID = random.nextInt(4)+1;
+    }
+
+    public int getTerminalID() {
+        return terminalID;
+    }
+
     public Menu getMenu() {
         return menu;
     }
@@ -145,7 +155,7 @@ public class CustomerTerminal {
         return pizzasInShoppingCart;
     }
 
-    public ArrayList<Extras> getExtrasInShoppingCart() {
+    public ArrayList<Extra> getExtrasInShoppingCart() {
         return extrasInShoppingCart;
     }
 
@@ -156,10 +166,12 @@ public class CustomerTerminal {
 
     }
 
+
+
     public void clearShoppingCartsAndOrder() {
         order = new Order();
         pizzasInShoppingCart = new ArrayList<Pizza>();
-        extrasInShoppingCart = new ArrayList<Extras>();
+        extrasInShoppingCart = new ArrayList<Extra>();
         orderID = getOrderID() + 1;
         totalPriceOfShoppingCart = 0;
     }

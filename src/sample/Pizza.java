@@ -3,19 +3,14 @@ package sample;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-// Written by Tadevos
 public class Pizza extends Product {
 
-    private int ordernumber;
-    private boolean isAmerican;
     private OrderStatus orderStatus;
     private ArrayList<Ingredient> includedIngredients;
     private ArrayList<Ingredient> extraIngredients;
 
     public Pizza(String name, double price) {
         super(name, price);
-        this.ordernumber = 0;
-        this.isAmerican = false;
         this.orderStatus = OrderStatus.ORDER_NOT_TAKEN;
         this.includedIngredients = new ArrayList<>();
         this.extraIngredients = new ArrayList<>();
@@ -49,14 +44,6 @@ public class Pizza extends Product {
         return extraIngredients;
     }
 
-    public int getOrdernumber() {
-        return ordernumber;
-    }
-
-    public void setOrdernumber(int ordernumber) {
-        this.ordernumber = ordernumber;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -65,24 +52,8 @@ public class Pizza extends Product {
         return name;
     }
 
-    public boolean isAmerican() {
-        return isAmerican;
-    }
-
     public OrderStatus getOrderStatus() {
         return orderStatus;
-    }
-
-    public void setIncludedIngredients(ArrayList<Ingredient> includedIngredients) {
-        this.includedIngredients = includedIngredients;
-    }
-
-    public void setExtraIngredients(ArrayList<Ingredient> extraIngredients) {
-        this.extraIngredients = extraIngredients;
-    }
-
-    public void setAmerican(boolean american) {
-        isAmerican = american;
     }
 
     public void setOrderStatus(OrderStatus orderStatusToSet) {
