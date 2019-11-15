@@ -27,6 +27,7 @@ public class Pizza extends Product {
     public boolean removeIngredient(Ingredient ingredientToRemove) {
         if(extraIngredients.contains(ingredientToRemove)) {
             extraIngredients.remove(ingredientToRemove);
+            price -= ingredientToRemove.getPrice();
             return true;
         } else if (includedIngredients.contains(ingredientToRemove)) {
             includedIngredients.remove(ingredientToRemove);
