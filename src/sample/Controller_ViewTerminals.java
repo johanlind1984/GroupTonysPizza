@@ -133,59 +133,53 @@ public class Controller_ViewTerminals {
     }
 
     @FXML
-    public void handleRemoveOrderBtn(ActionEvent removeOrder) {
-        for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListView.getSelectionModel().getSelectedItem()).getPizzas()) {
-            chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
-        }
-
-        statusTerminal.completeOrder((Order) statusOrderListView.getSelectionModel().getSelectedItem());
-        refreshUI();
-    }
-
-    @FXML
     public void handleSendOrderBtn(ActionEvent sendOrder) {
-        for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListView.getSelectionModel().getSelectedItem()).getPizzas()) {
-            chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
-        }
+        if(!statusOrderListView.getSelectionModel().isEmpty()) {
+            for (Pizza pizzaToRemoveFormChefTerminal : ((Order) statusOrderListView.getSelectionModel().getSelectedItem()).getPizzas()) {
+                chefTerminal.removePizzaFromBakeQueue(pizzaToRemoveFormChefTerminal);
+            }
 
-        statusTerminal.completeOrder((Order) statusOrderListView.getSelectionModel().getSelectedItem());
-        refreshUI();
+            statusTerminal.completeOrder((Order) statusOrderListView.getSelectionModel().getSelectedItem());
+            refreshUI();
+        }
     }
 
     @FXML
     public void handleRemoveFromShoppingCartBtn(ActionEvent removeItem) {
-        String classSelected = shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString();
+        if(!shoppingCartListView.getSelectionModel().isEmpty()) {
+            if (shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
+                customerTerminal.removePizzaFromShoppingCart((Pizza) shoppingCartListView.getSelectionModel().getSelectedItem());
+            } else {
+                customerTerminal.removeExtraFromCart((Extra) shoppingCartListView.getSelectionModel().getSelectedItem());
+            }
 
-        if(shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
-            customerTerminal.removePizzaFromShoppingCart((Pizza) shoppingCartListView.getSelectionModel().getSelectedItem());
-        } else {
-            customerTerminal.removeExtraFromCart((Extra) shoppingCartListView.getSelectionModel().getSelectedItem());
+            refreshUI();
         }
-
-        refreshUI();
     }
 
     @FXML
     void handleChangeOrderBtn(MouseEvent event) {
-        if(shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePizzaWindow.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
+        if(!shoppingCartListView.getSelectionModel().isEmpty()) {
+            if (shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePizzaWindow.fxml"));
+                    Parent root1 = (Parent) fxmlLoader.load();
+                    Stage stage = new Stage();
 
-                stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
-                stage.setTitle("Tony Mozzarella's Pizza");
-                stage.setAlwaysOnTop(true);
-                stage.setScene(new Scene(root1));
+                    stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
+                    stage.setTitle("Tony Mozzarella's Pizza");
+                    stage.setAlwaysOnTop(true);
+                    stage.setScene(new Scene(root1));
 
-                Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
-                Pizza selectedPizza = (Pizza) shoppingCartListView.getSelectionModel().getSelectedItem();
-                controller.setPizzaToModify(selectedPizza);
-                controller.setViewTerminalsController(this);
+                    Controller_ChangePizzaWindow controller = fxmlLoader.<Controller_ChangePizzaWindow>getController();
+                    Pizza selectedPizza = (Pizza) shoppingCartListView.getSelectionModel().getSelectedItem();
+                    controller.setPizzaToModify(selectedPizza);
+                    controller.setViewTerminalsController(this);
 
-                stage.show();
-            } catch (IOException e) {
-                Logger.getLogger(Controller_ViewTerminals.class.getName()).log(Level.SEVERE, null, e);
+                    stage.show();
+                } catch (IOException e) {
+                    Logger.getLogger(Controller_ViewTerminals.class.getName()).log(Level.SEVERE, null, e);
+                }
             }
         }
 
