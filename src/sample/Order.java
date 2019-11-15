@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Order {
     private ArrayList<Pizza> pizzasInCart;
-    private ArrayList<Extras> extrasInCart;
+    private ArrayList<Extra> extrasInCart;
     private int orderID;
     private double totalPriceOfOrder;
     private boolean isOrderComplete;
@@ -22,7 +22,7 @@ public class Order {
         return pizzasInCart;
     }
 
-    public ArrayList<Extras> getExtras() {
+    public ArrayList<Extra> getExtras() {
         return extrasInCart;
     }
 
@@ -55,8 +55,8 @@ public class Order {
             totalPriceOfOrder += pizza.getPrice();
         }
 
-        for (Extras extras : extrasInCart) {
-            totalPriceOfOrder += extras.getPrice();
+        for (Extra extra : extrasInCart) {
+            totalPriceOfOrder += extra.getPrice();
         }
         return totalPriceOfOrder;
     }
@@ -65,7 +65,7 @@ public class Order {
         pizzasInCart = pizzas;
     }
 
-    public void setExtrasOrder(ArrayList<Extras> extras) {
+    public void setExtrasOrder(ArrayList<Extra> extras) {
         extrasInCart = extras;
     }
 
@@ -107,7 +107,7 @@ public class Order {
 
         stringToReturn += "\n\t";
 
-        for (Extras extra : extrasInCart) {
+        for (Extra extra : extrasInCart) {
             stringToReturn += extra.getName() + ", ";
         }
 

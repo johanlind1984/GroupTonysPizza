@@ -59,7 +59,7 @@ public class Controller_ChangePizzaWindow {
         refreshUI();
     }
 
-    public void removeIngredientToPizza(MouseEvent event) {
+    public void removeIngredientFromPizza(MouseEvent event) {
         pizza.removeIngredient((Ingredient) ingredientsOnPizzaListView.getSelectionModel().getSelectedItem());
         refreshUI();
     }

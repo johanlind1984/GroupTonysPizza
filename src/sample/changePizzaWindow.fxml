@@ -20,7 +20,7 @@
          </children></HBox>
       <HBox layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
       <ListView fx:id="ingredientsListView" layoutX="79.0" layoutY="80.0" prefHeight="235.0" prefWidth="462.0" onMouseClicked="#addIngredientToPizza"/>
-      <ListView fx:id="ingredientsOnPizzaListView" layoutX="79.0" layoutY="371.0" prefHeight="200.0" prefWidth="462.0" onMouseClicked="#removeIngredientToPizza"/>
+      <ListView fx:id="ingredientsOnPizzaListView" layoutX="79.0" layoutY="371.0" prefHeight="200.0" prefWidth="462.0" onMouseClicked="#removeIngredientFromPizza"/>
       <HBox layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
       <HBox layoutX="200.0" layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
       <HBox layoutX="400.0" layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />

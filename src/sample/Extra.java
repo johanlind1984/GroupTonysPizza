@@ -2,9 +2,9 @@ package sample;
 
 import java.text.DecimalFormat;
 
-public class Extras extends Product {
+public class Extra extends Product {
 
-    public Extras(String name, double price) {
+    public Extra(String name, double price) {
         super(name, price);
     }
 

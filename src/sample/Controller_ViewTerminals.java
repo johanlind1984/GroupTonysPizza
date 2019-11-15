@@ -22,7 +22,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Controller_ViewTerminals {
@@ -61,11 +60,10 @@ public class Controller_ViewTerminals {
 
     ObservableList<Pizza> pizzaMenuObservableList;
     ObservableList<Ingredient> ingredientMenuObservableList;
-    ObservableList<Extras> extrasMenuObservableList;
+    ObservableList<Extra> extrasMenuObservableList;
     ObservableList<Product> shoppingCartObservableList;
     ObservableList<Pizza> chefTerminalObservableList;
     ObservableList<Order> statusTerminalObservableList;
-
     Menu menu;
     CustomerTerminal customerTerminal;
     ChefTerminal chefTerminal;
@@ -161,7 +159,7 @@ public class Controller_ViewTerminals {
         if(shoppingCartListView.getSelectionModel().getSelectedItem().getClass().toString().equals("class sample.Pizza")) {
             customerTerminal.removePizzaFromShoppingCart((Pizza) shoppingCartListView.getSelectionModel().getSelectedItem());
         } else {
-            customerTerminal.removeExtraFromCart((Extras) shoppingCartListView.getSelectionModel().getSelectedItem());
+            customerTerminal.removeExtraFromCart((Extra) shoppingCartListView.getSelectionModel().getSelectedItem());
         }
 
         refreshUI();
@@ -206,16 +204,16 @@ public class Controller_ViewTerminals {
         }
     }
 
-    public void handlePickPizza(MouseEvent contextMenuEvent) {
+    public void handlePickPizzaFromMenu(MouseEvent contextMenuEvent) {
         Pizza pizzaToAddToOrder = (Pizza) pizzaMenuListView.getSelectionModel().getSelectedItem();
         customerTerminal.addPizzaToShoppingCart(pizzaToAddToOrder);
         shoppingCartTotalPriceTextField.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
         refreshUI();
     }
 
-    public void handlePickExtra(MouseEvent contextMenuEvent) {
-        Extras extrasToAddToOrder = (Extras) extraMenuListView.getSelectionModel().getSelectedItem();
-        customerTerminal.addExtraToShoppingCart(extrasToAddToOrder);
+    public void handlePickExtraFromMenu(MouseEvent contextMenuEvent) {
+        Extra extraToAddToOrder = (Extra) extraMenuListView.getSelectionModel().getSelectedItem();
+        customerTerminal.addExtraToShoppingCart(extraToAddToOrder);
         shoppingCartTotalPriceTextField.setText(("" + customerTerminal.getTotalPriceOfShoppingCart()));
         refreshUI();
     }

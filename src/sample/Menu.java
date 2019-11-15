@@ -5,7 +5,7 @@ public class Menu {
 
     private ArrayList<Pizza>allPizzaMenu;
     private ArrayList<Ingredient>allIngredientMenu;
-    private ArrayList<Extras>allExtrasMenu;
+    private ArrayList<Extra>allExtrasMenu;
 
     public Menu() {
         allPizzaMenu = new ArrayList<>();
@@ -117,23 +117,23 @@ public class Menu {
         allPizzaMenu.add(colombo);
     }
     public void createListOfExtras(){
-        Extras water = new Extras("Vatten", 0.00);
+        Extra water = new Extra("Vatten", 0.00);
         allExtrasMenu.add(water);
-        Extras mineralWaterNatural=new Extras("Mineralvatten naturell", 20.00);
+        Extra mineralWaterNatural=new Extra("Mineralvatten naturell", 20.00);
         allExtrasMenu.add(mineralWaterNatural);
-        Extras mineralWaterLemon=new Extras("Mineralvatten citron", 20.00);
+        Extra mineralWaterLemon=new Extra("Mineralvatten citron", 20.00);
         allExtrasMenu.add(mineralWaterLemon);
-        Extras cocaCola=new Extras("Coca-Cola", 20.00);
+        Extra cocaCola=new Extra("Coca-Cola", 20.00);
         allExtrasMenu.add(cocaCola);
-        Extras fanta = new Extras("Fanta", 20.00);
+        Extra fanta = new Extra("Fanta", 20.00);
         allExtrasMenu.add(fanta);
-        Extras sprite=new Extras("Sprite", 20.00);
+        Extra sprite=new Extra("Sprite", 20.00);
         allExtrasMenu.add(sprite);
-        Extras pizzaSalad=new Extras("Pizzasallad", 0.00);
+        Extra pizzaSalad=new Extra("Pizzasallad", 0.00);
         allExtrasMenu.add(pizzaSalad);
-        Extras bearnaiseSause=new Extras("Bearnaisesås", 10.00);
+        Extra bearnaiseSause=new Extra("Bearnaisesås", 10.00);
         allExtrasMenu.add(bearnaiseSause);
-        Extras bread = new Extras("Bröd", 10.00);
+        Extra bread = new Extra("Bröd", 10.00);
         allExtrasMenu.add(bread);
     }
     public ArrayList<Pizza> getAllPizzaMenu() {
@@ -144,7 +144,7 @@ public class Menu {
         return allIngredientMenu;
     }
 
-    public ArrayList<Extras> getAllExtrasMenu() {
+    public ArrayList<Extra> getAllExtrasMenu() {
         return allExtrasMenu;
     }
 }
