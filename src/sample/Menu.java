@@ -46,6 +46,7 @@ public class Menu {
 
 
         Pizza makeYourOwn=new Pizza("Gör din egen pizza", 70.00);
+        allPizzaMenu.add(makeYourOwn);
         Pizza margerita = new Pizza ("Margerita", 70.00);
         margerita.addIngredientIncluded(tomato);
         margerita.addIngredientIncluded(cheese);
