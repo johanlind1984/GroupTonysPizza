@@ -86,9 +86,6 @@ public class CustomerTerminal {
 
         for (Pizza pizza : pizzasInShoppingCart) {
             priceToReturn += pizza.getPrice();
-            for (Ingredient extraIngredient : pizza.getExtraIngredients()) {
-                priceToReturn += extraIngredient.getPrice();
-            }
         }
 
         for (Extra extra : extrasInShoppingCart) {
