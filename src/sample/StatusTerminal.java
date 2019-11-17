@@ -1,9 +1,9 @@
 package sample;
+
+import java.awt.*;
 import java.util.ArrayList;
 
 public class StatusTerminal {
-
-    //* AUTHOR: JOHAN LIND* //
 
     private ArrayList<Order> orders;
 
@@ -15,11 +15,21 @@ public class StatusTerminal {
         orders.add(orderToAdd);
     }
 
-    public void checkIfAnyOrderIsComplete() {
-        // for each trhrough the orderlist, check all pizzas in order if status is set to complete. If all pizzas have
-        // status complete the order is done.
-        //
+    public boolean checkIfAnyOrderIsComplete() {
+        for (Order order : orders) {
+            if(order.isOrderComplete()) {
+                return true;
+            }
+        }
+
+        return false;
     }
+    public void playSoundIfAnyOrdercomplete() {
+        if(checkIfAnyOrderIsComplete()) {
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }
+
 
     public void completeOrder(Order orderToComplete) {
         orders.remove(orderToComplete);

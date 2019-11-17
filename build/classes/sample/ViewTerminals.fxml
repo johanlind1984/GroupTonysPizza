@@ -14,7 +14,7 @@
    <children>
       <TabPane layoutY="-2.0" prefHeight="750.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab style="-fx-background-color: limegreen;" text="Customer Terminal" fx:id="terminalIDTab">
+          <Tab style="-fx-background-color: limegreen;" text="Customer Terminal">
             <content>
               <AnchorPane fx:id="idCustTerminal" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
                      <children>
@@ -85,17 +85,17 @@
                         <HBox alignment="CENTER" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
                         <HBox alignment="CENTER" layoutX="200.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
                         <HBox alignment="CENTER" layoutX="400.0" layoutY="669.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
-                        <Button fx:id="orderInOvenButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handlePizzaInOvenBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Pizza i ugnen">
+                        <Button fx:id="orderInOvenButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="163.0" mnemonicParsing="false" onAction="#handlePizzaInOvenBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order i ugnen">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="takeOrderButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleTakePizzaBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Bakar Pizza">
+                        <Button fx:id="takeOrderButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleTakePizzaBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Ta order">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="orderCompleteButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="231.0" mnemonicParsing="false" onAction="#handlePizzaCompleteBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Pizza klar">
+                        <Button fx:id="orderCompleteButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="231.0" mnemonicParsing="false" onAction="#handlePizzaCompleteBtn" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: red; -fx-font-size: 16;" text="Order klar">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>

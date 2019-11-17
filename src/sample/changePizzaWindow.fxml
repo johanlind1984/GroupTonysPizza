@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_ChangePizzaWindow">
+   <children>
+      <HBox prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+      <HBox layoutX="200.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="label" alignment="CENTER" prefHeight="45.0" prefWidth="210.0" style="-fx-font-size: 35; -fx-font-family: Gabriola;" text="Tony Mozzarella" textAlignment="CENTER">
+               <font>
+                  <Font name="Gabriola" size="24.0" />
+               </font>
+            </Label>
+         </children></HBox>
+      <HBox layoutX="400.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+      <ListView fx:id="ingredientsListView" layoutX="79.0" layoutY="80.0" prefHeight="235.0" prefWidth="462.0" onMouseClicked="#addIngredientToPizza"/>
+      <ListView fx:id="ingredientsOnPizzaListView" layoutX="79.0" layoutY="371.0" prefHeight="200.0" prefWidth="462.0" onMouseClicked="#removeIngredientFromPizza"/>
+      <HBox layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: limegreen;" />
+      <HBox layoutX="200.0" layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <HBox layoutX="400.0" layoutY="708.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: red;" />
+   </children>
+</AnchorPane>

@@ -1,30 +1,22 @@
 package sample;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChefTerminal {
 
-    //* AUTHOR: JOHAN LIND* //
-
     private String name;
     private ArrayList<Pizza> queueOfPizzasToBake;
-
-    // CONSIDER USING A ENUM INSTEAD, ESPECIALLY FOR USABILITY IN CONTROLLERCLASS
-//    private static final int ORDER_NOT_TAKEN = 0;
-//    private static final int ORDER_IS_TAKEN = 1;
-//    private static final int ORDER_IS_IN_OVEN = 2;
-//    private static final int ORDER_IS_COMPLETE = 3;
 
     public ChefTerminal(String name) {
         this.name = name;
         this.queueOfPizzasToBake = new ArrayList<>();
     }
 
-    public void addPizzaToQueue(Pizza pizzaToBake) {
-        queueOfPizzasToBake.add(pizzaToBake);
+    public void addListOfPizzasToQueue(ArrayList<Pizza> newOrderOfPizzas) {
+        queueOfPizzasToBake.addAll(newOrderOfPizzas);
     }
 
     public boolean removePizzaFromBakeQueue(Pizza pizzaToRemove) {
-        // TESTED
         if(queueOfPizzasToBake.contains(pizzaToRemove)) {
             queueOfPizzasToBake.remove(pizzaToRemove);
             return true;
@@ -33,10 +25,10 @@ public class ChefTerminal {
         return false;
     }
 
-    public void setOrderStatus(int orderStatus, Pizza pizzaToChangeStatus) {
+    public void setOrderStatus(OrderStatus status, Pizza pizzaToChangeStatus) {
         for (Pizza pizza : queueOfPizzasToBake) {
             if(pizza.equals(pizzaToChangeStatus)) {
-                pizza.setOrdernumber(orderStatus);
+                pizza.setOrderStatus(status);
             }
         }
     }

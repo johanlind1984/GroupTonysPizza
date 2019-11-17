@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Stefan
+ * @authors Stefan, Johanna, Johan, Enock, Tadevos
  */
-public class TonyMozzarellaFX extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -31,16 +31,10 @@ public class TonyMozzarellaFX extends Application {
         
         stage.setScene(scene);
         stage.setTitle("Tony Mozzarella's Pizza");
-
-        stage.getIcons().add(new Image("file:TonyMozzarellaImages\\flag.png"));
-
         stage.getIcons().add(new Image("file:src\\TonyMozzarellaImages\\flag.png"));
-
-        stage.getIcons().add(new Image("file:C:\\Users\\Stefan\\Documents\\NetBeansProjects\\TonyMozzarellaFX\\src\\TonyMozzarellaImages\\flag.png"));
-
         stage.show();
     }  catch (IOException ex){
-        Logger.getLogger(TonyMozzarellaFX.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
 
