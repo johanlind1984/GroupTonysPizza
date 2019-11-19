@@ -6,14 +6,7 @@ public class Ingredient extends Product {
         super(name, price);
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
+    @Override
     public String toString(){
       return name+"\t"+price+" kr";
     }
