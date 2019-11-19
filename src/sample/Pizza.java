@@ -45,14 +45,6 @@ public class Pizza extends Product {
         return extraIngredients;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }

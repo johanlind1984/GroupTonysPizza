@@ -8,14 +8,6 @@ public class Extra extends Product {
         super(name, price);
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("0.00");
